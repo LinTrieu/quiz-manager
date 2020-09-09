@@ -1,61 +1,81 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Quiz Manager - Synoptic Project Notes  
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## Notes for Development - Project Planning  
 
-## About Laravel
+- Laravel Scaffold ✅
+    - Issue: Change app_name to Quiz Manager ✅ `php artisan config:cache`
+- mySQL Database Setup ✅ 
+- Authentication Scaffolding - builtin package ✅  
+- Bootstrap library ✅ 
+- Model Objects & Migrations 
+    - User ✅
+    - Quiz ✅
+    - Question ✅ 
+- A user can register ✅ 
+- A user can log-in and log-out ✅  
+- A user can view all quizzes displayed on the homepage ✅
+    - Issue: List quizzes per card item in Blade ❌
+    - Issue: Send quiz ID to question controller and redirect to a list of questions ✅
+- A user can view all questions per quiz ✅
+    - Only show the questions listed under specified quiz id ✅
+- A user can add a quiz ✅
+- A user can add a question 
+- A user can edit a quiz
+- A user can edit a question 
+- Different users have different user access permissions 
+- A user can complete a quiz 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+ -------------------------------------
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Background 
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- You work for WebbiSkools Ltd, a software company that provides on-line educational solutions for education establishments and training providers. 
+- Your manager would like you to design, build, and test a database-driven website to manage quizzes, each consisting of a set of multiple-choice questions and their associated answers. 
+- The website’s capabilities will only be accessible to known users.
+- Users with full permissions will be able to view and edit the questions and answers. 
+- Users with lesser permissions will be able to view them but not edit them. 
+- Users with minimal permissions will only be able to see the questions.
+-------------------------------------
 
-## Learning Laravel
+### Technology Stack
+- PHP 7.3.11
+- Laravel Framework 7.15.0
+- Composer 
+- mySQL Database 
+- Eloquent ORM 
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### How to set up & run application 
+1. Git clone repository,
+2. Set up a local  mySQL database named `quiz-manager` (more details below) 
+3. Run the command `make migrate-seed` to run database migrations and seeders,
+4. Run `make start` to start the server. View application on your localhost.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+❌  Compile CSS UI resources by running `npm install`, and build dev assets running `npm run dev` ,
 
-## Laravel Sponsors
+-------------------------------------
+#### Create a local mySQL database
+1. 
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+-------------------------------------
 
-### Premium Partners
+### User Stories
+Full stack website that manages quizzes for registered users. Quizzes consist of a set of multiple choice questions. Users have varying levels of permissions to access the questions and/or answers.   
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+```
+As a user with full permissions
+So that I can access the quiz
+I want to view and edit the questions and answers 
+```
 
-## Contributing
+```
+As a user with lesser permissions
+So that I can access the quiz
+I want to view the questions and answers 
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```
+As a user with minimal permissions
+So that I can access the quiz
+I want to view the questions 
+```
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
