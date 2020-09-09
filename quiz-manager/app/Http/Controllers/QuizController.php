@@ -16,13 +16,14 @@ class QuizController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
+     * Display a list of available Quizzes.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function index()
     {
-        //
+        $quizzes = Quiz::all();
+        return view('quiz.quiz_list', array( 'quizzes' => $quizzes));
     }
 
     /**
