@@ -4,21 +4,21 @@
 
 - Laravel Scaffold ✅
     - Issue: Change app_name to Quiz Manager ✅ `php artisan config:cache`
-- mySQL Database Setup ✅ 
+- mySQL Database Connection ✅ 
 - Authentication Scaffolding - builtin package ✅  
 - Bootstrap library ✅ 
-- Model Objects & Migrations 
-    - User ✅
-    - Quiz ✅
-    - Question ✅ 
-- A user can register ✅ 
-- A user can log-in and log-out ✅  
-- A user can view all quizzes displayed on the homepage ✅
-    - Issue: List quizzes per card item in Blade ❌
-    - Issue: Send quiz ID to question controller and redirect to a list of questions ✅
-- A user can view all questions per quiz ✅
-    - Only show the questions listed under specified quiz id ✅
-- A user can add a quiz ✅
+- Model Eloquent Objects & Migrations 
+    - User 
+    - Quiz
+    - Question
+- A user cannot register - remove auth functionality   
+- A user can log-in and log-out   
+- A user can view all quizzes displayed on the homepage 
+    - Issue: List quizzes per card item in Blade 
+    - Issue: Send quiz ID to question controller and redirect to a list of questions 
+- A user can view all questions per quiz 
+    - Only show the questions listed under specified quiz id 
+- A user can add a quiz 
 - A user can add a question 
 - A user can edit a quiz
 - A user can edit a question 
@@ -38,19 +38,22 @@
 -------------------------------------
 
 ### Technology Stack
+
 - PHP 7.3.11
 - Laravel Framework 7.15.0
 - Composer 
 - mySQL Database 
 - Eloquent ORM 
 
-### How to set up & run application 
+### How to set up & run application
+ 
 1. Git clone repository,
 2. Set up a local  mySQL database named `quiz-manager` (more details below) 
 3. Run the command `make migrate-seed` to run database migrations and seeders,
 4. Run `make start` to start the server. View application on your localhost.
-
 ❌  Compile CSS UI resources by running `npm install`, and build dev assets running `npm run dev` ,
+
+See `Makefile` for a list of commands available in the application. 
 
 -------------------------------------
 #### Create a local mySQL database
