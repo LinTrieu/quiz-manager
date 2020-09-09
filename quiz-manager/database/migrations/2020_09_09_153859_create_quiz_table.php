@@ -17,7 +17,7 @@ class CreateQuizTable extends Migration
     {
         Schema::create(self::TABLE_NAME, function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('title')->unique();
             $table->string('icon')->default('default_icon.jpg');  // TODO: add functionality for quiz icon image
             $table->dateTime('created_at');
             $table->dateTime('updated_at');
