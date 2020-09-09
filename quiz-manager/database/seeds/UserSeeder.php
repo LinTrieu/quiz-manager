@@ -22,12 +22,12 @@ class UserSeeder extends Seeder
 
         factory(User::class, self::NUMBER_OF_USERS)->create();
 
-        $lin = new User();
-        $lin->first_name = 'Lin';
-        $lin->last_name = 'Trieu';
-        $lin->email = 'linna@gmail.com';
-        $lin->password = Hash::make('password');
-        $lin->permission_level = 3;
-        $lin->save();
+//        $lin = new User();
+//        $lin->first_name = 'Lin';
+//        $lin->last_name = 'Trieu';
+//        $lin->email = 'linna@gmail.com';
+//        $lin->password = Hash::make('password');
+//        $lin->permission_level = 3;
+//        $lin->save();
     }
 }
