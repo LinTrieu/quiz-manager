@@ -54,8 +54,25 @@
 
 -------------------------------------
 #### Create a local mySQL database
-1. 
+1. Install the  mySQL client,
 
+2. Run the mySQL client - `$ mysql -u root -p`
+    - `root` - user
+    - `p` - you will be prompted to enter a password. Please press enter, with a blank password.
+
+3. Create a local database the application can integrate with: `CREATE DATABASE quiz_manager;` 
+    - Run the query `SHOW DATABASES;`, to confirm your database has been created.
+
+4. In the Quiz Manager `.env` file (line 9-15), please check the Database Connection  config matches the details you configured locally. 
+    - `DB_CONNECTION`, `DB_HOST`, `DB_PORT` - you should not have to update these
+    - `DB_DATABASE` - update with the name of your Database (e.g. `quiz_manager`)
+    - `DB_USERNAME`, `DB_PASSWORD` - represent your personal mySQL user credentials 
+
+5. Once your `.env` config is set up, run `make migrate` to confirm your Database connection is working. If migrations do not run, please check the below troubleshooting steps.
+ 
+ Troubleshooting
+ - Database Connection
+ - mySQL client, database table
 -------------------------------------
 
 ### User Stories
