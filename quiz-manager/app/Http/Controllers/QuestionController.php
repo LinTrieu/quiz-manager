@@ -4,9 +4,26 @@ namespace App\Http\Controllers;
 
 use App\Models\Question;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class QuestionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+//    /**
+//     * Displays all questions by quiz id
+//     *
+//     * @param int $quizId
+//     * @return View
+//     */
+//    protected function listByQuizId(int $quizId): View {
+//        $questions = Question::all()->where('quiz_id', $quizId);
+//        return view('questions', array('questions' => $questions));
+//    }
+
     /**
      * Display a listing of the resource.
      *

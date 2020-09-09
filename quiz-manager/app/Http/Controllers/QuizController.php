@@ -12,7 +12,7 @@ class QuizController extends Controller
 {
     public function __construct()
     {
-        //
+        $this->middleware('auth');
     }
 
     /**
@@ -20,7 +20,7 @@ class QuizController extends Controller
      *
      * @return View
      */
-    public function index()
+    public function index(): View
     {
         $quizzes = Quiz::all();
         return view('quiz.quiz_list', array( 'quizzes' => $quizzes));
