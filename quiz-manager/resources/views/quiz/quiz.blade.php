@@ -9,8 +9,8 @@
 
                     <div class="card-body">
                         @foreach ($questions as $question)
-                            <div class="mb-5">
-                                <p> Question {{ $question['id'] }}. {{ $question['description'] }} </p>
+                            <div class="mb-4">
+                                <p class="font-weight-bold"> Question {{ $question['id'] }}. {{ $question['description'] }} </p>
                                 <p> Options </p>
                                 <li> A: {{ $question['option_a'] }} </li>
                                 <li> B: {{ $question['option_b'] }} </li>
