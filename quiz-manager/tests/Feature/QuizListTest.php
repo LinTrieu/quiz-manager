@@ -39,6 +39,8 @@ class QuizListTest extends TestCase
         $this->assertGuest();
     }
 
+    //testDatabaseHasTheQuizzes
+
 //$this->assertDatabaseHas();
 //    public function testAllQuizzesAreListedOnQuizList(): void
 //    {

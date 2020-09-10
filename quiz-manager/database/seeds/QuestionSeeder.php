@@ -5,14 +5,14 @@ use Illuminate\Database\Seeder;
 
 class QuestionSeeder extends Seeder
 {
-    const NUMBER_OF_QUESTIONS = 10;
+    private const NUMBER_OF_QUESTIONS = 80;
 
     /**
      * Run the database seeds.
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
         if (Question::count()) {
             echo "Skipping Question; data already exists\n";

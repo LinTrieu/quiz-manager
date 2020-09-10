@@ -22,7 +22,7 @@ class Quiz extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'icon'
+        'id','title', 'icon'
     ];
 
     public function question(): HasMany

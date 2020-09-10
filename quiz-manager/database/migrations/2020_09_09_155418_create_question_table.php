@@ -6,14 +6,14 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateQuestionTable extends Migration
 {
-    const TABLE_NAME = 'question';
+    private const TABLE_NAME = 'question';
 
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create(self::TABLE_NAME, function (Blueprint $table) {
             $table->id();
@@ -39,7 +39,7 @@ class CreateQuestionTable extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists(self::TABLE_NAME);
     }
