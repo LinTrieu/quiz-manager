@@ -26,7 +26,7 @@ class LoginTest extends TestCase
 
         $response = $this->actingAs($user)->get('/login');
 
-        $response->assertRedirect('/home');
+        $response->assertRedirect('/quiz');
     }
 
     public function testUserCanLoginWithCorrectCredentials(): void
@@ -40,7 +40,7 @@ class LoginTest extends TestCase
             'password' => $password,
         ]);
 
-        $response->assertRedirect('/home');
+        $response->assertRedirect('/quiz');
         $this->assertAuthenticatedAs($user);
     }
 
@@ -75,7 +75,7 @@ class LoginTest extends TestCase
             'remember' => 'on',
         ]);
 
-        $response->assertRedirect('/home');
+        $response->assertRedirect('/quiz');
         $this->assertAuthenticatedAs($user); // cookie assertion
 
         $response->assertCookie(Auth::guard()->getRecallerName(), vsprintf('%s|%s|%s', [

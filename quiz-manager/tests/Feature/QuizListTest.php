@@ -11,6 +11,8 @@ class QuizListTest extends TestCase
 
     public function testUserCanViewAListOfAllQuizzes(): void
     {
+        $this->loginWithFakeUser();
+
     }
 
     public function testUserCannotViewQuizzesWhenGuest(): void
