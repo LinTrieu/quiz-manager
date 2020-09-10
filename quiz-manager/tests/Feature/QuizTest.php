@@ -15,10 +15,27 @@ class QuizTest extends TestCase
     public function testUserCanViewQuizList(): void
     {
         $this->loginWithFakeUser();
+
+        factory(Quiz::class)->create([
+            'id' => 1,
+        ]);
+
         $response = $this->get('/quiz/1');
 
         $response->assertSuccessful();
         $response->assertViewIs('quiz.quiz');
+    }
+
+    public function testUserCannotViewQuizWhenGuest(): void
+    {
+        factory(Quiz::class)->create([
+            'id' => 1,
+        ]);
+
+        $response = $this->get('/quiz/1');
+
+        $response->assertRedirect('/login');
+        $this->assertGuest();
     }
 
     public function testUserOnlySeesQuestionsBelongingToAQuiz(): void
