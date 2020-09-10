@@ -19,6 +19,9 @@
                                 <li> E: {{ $question['option_e'] }} </li>
                                 <br>
                                 <a href="#" class="card-link">Show Answer</a>
+                                <span class="answer">
+                                    {{ $question['answer_key'] }}
+                                </span>
                             </div>
                         @endforeach
                     </div>

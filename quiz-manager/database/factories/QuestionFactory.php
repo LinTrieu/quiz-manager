@@ -22,7 +22,7 @@ $factory->define(Question::class, function (Faker $faker) {
     return [
         'description' => $faker->sentence,
         'quiz_id' => Quiz::all()->random()->id,
-        'answer_key' => $faker->randomElement(['a', 'b', 'c', 'd', 'e']),
+        'answer_key' => $faker->randomElement(['A','B','C','D','E']),
         'option_a' => $faker->word,
         'option_b' => $faker->word,
         'option_c' => $faker->word,

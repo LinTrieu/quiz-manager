@@ -19,7 +19,7 @@ class CreateQuestionTable extends Migration
             $table->id();
             $table->unsignedBigInteger('quiz_id');
             $table->text('description');
-            $table->enum('answer_key', ['a', 'b', 'c', 'd', 'e']);
+            $table->enum('answer_key', ['A','B','C','D','E']);
             $table->string('option_a');
             $table->string('option_b');
             $table->string('option_c');
