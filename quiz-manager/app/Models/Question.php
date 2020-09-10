@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use AnswerKey;
 
 /**
  * Class Question
@@ -11,7 +12,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property  int $id
  * @property int $quiz_id
  * @property string $description
- * @property string $answer_key  TODO: create enum for answer_key
+ * @property AnswerKey $answer_key
  * @property string $option_a
  * @property string $option_b
  * @property string $option_c
