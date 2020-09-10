@@ -93,12 +93,14 @@
                 class="links">
                 @guest
                     <a href="{{ route('login') }}">
-                        Login </a> @endguest
-                <a href="{{ url('quiz') }}">
-                    Quizzes </a>
+                        Login </a>
+                @endguest
+
                 @auth
-                    <a href="{{ url('logout') }}">
-                        Logout </a> @endauth
+                    <a href="{{ url('quiz') }}"> View Quizzes </a>
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
+                @endauth
             </div>
         </div>
     </div>
