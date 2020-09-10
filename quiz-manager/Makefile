@@ -40,8 +40,8 @@ composer-install: ## install packages specified in composer lock file
 composer-update: ## update packages to latest version, as stated in composer json
 	composer update $(ARGS)
 
-routes: ## list routes --filter via name, path or method
-	php artisan route:list $(ARGS)
+route: ## list routes --filter via name, path or method
+	php artisan route:list
 
 clear-config-cache: ## clear configuration cache
 	php artisan config:clear

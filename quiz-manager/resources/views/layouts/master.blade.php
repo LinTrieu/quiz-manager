@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Quiz Manager') }}</title>
 
     <!-- Scripts -->
-    <script type="text/javascript" src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+{{--    <script type="text/javascript" src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>--}}
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -76,5 +76,11 @@
             @yield('content')
         </main>
     </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap's JavaScript library -->
+    <script type="text/javascript" src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+
 </body>
 </html>
