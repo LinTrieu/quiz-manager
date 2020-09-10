@@ -10,9 +10,12 @@ use Illuminate\View\View;
 
 class QuizController extends Controller
 {
-    public function __construct()
+    protected $quiz;
+
+    public function __construct(Quiz $quiz)
     {
         $this->middleware('auth');
+        $this->quiz = $quiz;
     }
 
     /**
@@ -22,7 +25,9 @@ class QuizController extends Controller
      */
     public function index(): View
     {
-        $quizzes = Quiz::all();
+        $quizzes = $this->quiz->all();
+
+//        $quizzes = Quiz::all();
         return view('quiz.quiz_list', array( 'quizzes' => $quizzes));
     }
 

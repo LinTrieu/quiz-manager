@@ -8,9 +8,12 @@ use Illuminate\View\View;
 
 class QuestionController extends Controller
 {
-    public function __construct()
+    protected $question;
+
+    public function __construct(Question $question)
     {
         $this->middleware('auth');
+        $this->question = $question;
     }
 
     /**
@@ -20,8 +23,10 @@ class QuestionController extends Controller
      * @return View
      */
     protected function listByQuizId(int $quizId): View {
-        $questions = Question::all()->where('quiz_id', $quizId);
-        return view('quiz.quiz', array('questions' => $questions));
+        $questions = $this->question->all();
+
+        $questionsByQuizId = $questions->where('quiz_id', $quizId);
+        return view('quiz.quiz', array('questions' => $questionsByQuizId));
     }
 
     /**
