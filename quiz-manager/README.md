@@ -16,14 +16,17 @@
 - A user can view all quizzes displayed on the homepage ✅  
     - Issue: List quizzes per card item in Blade 
     - Issue: Send quiz ID to question controller and redirect to a list of questions 
-- A user can view all questions per quiz 
-    - Only show the questions listed under specified quiz id 
+- A user can view questions per quiz ✅  
+    - Only show the questions listed under specified quiz id
+- A user can see the answers to questions 
+
+🙌🏽 🎉 MVP 🎉🙌🏽     
+
+- Different users have different user access permissions 
 - A user can add a quiz 
 - A user can add a question 
 - A user can edit a quiz
 - A user can edit a question 
-- Different users have different user access permissions 
-- A user can complete a quiz 
 
  -------------------------------------
 
