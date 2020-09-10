@@ -3,16 +3,16 @@
 ## Notes for Development - Project Planning  
 
 - Laravel Scaffold ✅
-    - Issue: Change app_name to Quiz Manager ✅ `php artisan config:cache`
+    - Issue: Change app_name to Quiz Manager ✅ 
 - mySQL Database Connection ✅ 
 - Authentication Scaffolding - builtin package ✅  
 - Bootstrap library ✅ 
 - Model Eloquent Objects & Migrations 
-    - User 
-    - Quiz
-    - Question
-- A user cannot register - remove auth functionality   
-- A user can log-in and log-out   
+    - User ✅ 
+    - Quiz ✅ 
+    - Question ✅ 
+- A user cannot register - remove auth functionality ✅    
+- A user can log-in and log-out ✅ 
 - A user can view all quizzes displayed on the homepage 
     - Issue: List quizzes per card item in Blade 
     - Issue: Send quiz ID to question controller and redirect to a list of questions 

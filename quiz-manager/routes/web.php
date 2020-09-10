@@ -24,3 +24,10 @@ Auth::routes([
 ]);
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/quiz', 'QuizController@index');
+
+Route::get('quiz/{quiz_id}', [
+    'uses' => 'QuestionController@listByQuizId',
+    'as' => 'quiz.id',
+]);

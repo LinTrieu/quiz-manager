@@ -9,6 +9,9 @@ install: ## Install composer dependencies
 test:
 	php artisan test $(ARGS)
 
+phpunit: ## Run phpunit test suite with stack trace
+	vendor/bin/phpunit -v
+
 migrate: ## Migrate database
 	php artisan migrate
 
