@@ -1,6 +1,17 @@
 # Quiz Manager - Synoptic Project Notes  
 
-## Notes for Development - Project Planning  
+
+##  User Account Login Details for Testing
+The application is pre-configured with three user accounts for each of the user permission levels. 
+
+Login Details: 
+- Email: `restricted@test.com`
+- Email: `view@test.com`
+- Email: `edit@test.com`
+- Password (for all): `password` 
+
+
+## Notes for Development - Project Planning
 
 - Laravel Scaffold ✅
     - Issue: Change app_name to Quiz Manager ✅ 
@@ -18,11 +29,12 @@
     - Issue: Send quiz ID to question controller and redirect to a list of questions 
 - A user can view questions per quiz ✅  
     - Only show the questions listed under specified quiz id
-- A user can view the answers to questions 
+- A user can view the answers to questions  ✅  
 
 🙌🏽 🎉 MVP 🎉🙌🏽     
 
-- Different users have different user access permissions 
+- Different users have different user access permissions
+- A restricted user can only see questions 
 - A user can add a quiz 
 - A user can add a question 
 - A user can edit a quiz
