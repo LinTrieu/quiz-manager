@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Models;
+
 use MyCLabs\Enum\Enum;
 
 /**

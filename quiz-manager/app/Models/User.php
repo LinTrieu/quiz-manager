@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use UserPermission;
+use App\Models\UserPermission;
 
 /**
  * Class User

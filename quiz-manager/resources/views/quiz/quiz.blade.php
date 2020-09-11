@@ -13,7 +13,7 @@
                                 <p class="font-weight-bold"> Question {{ $question['id'] }}. {{ $question['description'] }} </p>
                                 @if( $permissionLevel != 1)
                                     <div class="answer-options">
-                                        <p> Options </p>
+                                        <p> Options: </p>
                                         <li> A: {{ $question['option_a'] }} </li>
                                         <li> B: {{ $question['option_b'] }} </li>
                                         <li> C: {{ $question['option_c'] }} </li>
