@@ -11,7 +11,7 @@
                         @foreach ($questions as $question)
                             <div class="mb-4">
                                 <p class="font-weight-bold"> Question {{ $question['id'] }}. {{ $question['description'] }} </p>
-                                @if( $permissionLevel != 1)
+                                @if( $permissionLevel != \App\Models\UserPermission::PERMISSION_RESTRICT)
                                     <div class="answer-options">
                                         <p> Options: </p>
                                         <li> A: {{ $question['option_a'] }} </li>
@@ -30,7 +30,7 @@
                     </div>
 {{--                    <div class="card-footer row justify-content-center">--}}
                     <div class="card-footer justify-content-center">
-                    @if($permissionLevel != 1)
+                    @if($permissionLevel != \App\Models\UserPermission::PERMISSION_RESTRICT)
                         <a class="btn btn-primary show-answers">Reveal Answers</a>
                     @endif
                     </div>
