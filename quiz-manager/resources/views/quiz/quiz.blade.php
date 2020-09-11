@@ -18,18 +18,27 @@
                                 <li> D: {{ $question['option_d'] }} </li>
                                 <li> E: {{ $question['option_e'] }} </li>
                                 <br>
-                                <a href="#" class="card-link">Show Answer</a>
-                                <span class="answer">
-                                    {{ $question['answer_key'] }}
-                                </span>
+                                <p class="answer-key">
+                                    Answer: {{ $question['answer_key'] }}
+                                </p>
                             </div>
                         @endforeach
                     </div>
-                    <div class="card-footer">
-                        <a href="https://google.com" class="btn btn-primary">See Answers</a>
+                    <div class="card-footer row justify-content-center">
+                        <a class="btn btn-primary show-answers">Reveal Answers</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".answer-key").hide();
+
+            $(".show-answers").click(function(){
+                $(".answer-key").show();
+            });
+        });
+    </script>
 @endsection

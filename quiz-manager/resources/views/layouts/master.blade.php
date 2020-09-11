@@ -9,28 +9,22 @@
 
     <title>{{ config('app.name', 'Quiz Manager') }}</title>
 
-    <!-- Scripts -->
-{{--    <script type="text/javascript" src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>--}}
-
-<!-- Fonts -->
-    <link
-        rel="dns-prefetch"
-        href="//fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito"
-        rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link
-        href="{{ asset('bootstrap/css/bootstrap.min.css') }}"
-        rel="stylesheet">
-    <link
-        href="{{ asset('css/app.css') }}"
-        rel="stylesheet">
+    <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    {{--    Scripts--}}
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap's JavaScript library -->
+    <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}" type="text/javascript" ></script>
 </head>
 <body>
-<div
-    id="app">
+<div id="app">
     <nav
         class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div
@@ -94,11 +88,5 @@
             @yield('content')
         </main>
     </div>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Bootstrap's JavaScript library -->
-    <script type="text/javascript" src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
-
 </body>
 </html>

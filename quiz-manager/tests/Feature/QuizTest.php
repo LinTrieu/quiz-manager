@@ -6,7 +6,6 @@ use App\Models\Question;
 use App\Models\Quiz;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
-use Mockery;
 
 class QuizTest extends TestCase
 {
@@ -65,4 +64,20 @@ class QuizTest extends TestCase
         $response->assertDontSee($questionQuizTwo->description);
     }
 
+    // fails as the assertion depends on browser? INVESTIGATE how to test this...
+//    public function testAnswersAreHiddenToUserByDefault(): void
+//    {
+//        $this->loginWithFakeUser();
+//
+//        $quiz = factory(Quiz::class)->create([
+//            'id' => 1,
+//        ]);
+//
+//        $questions = factory(Question::class, 10)->create([
+//            'quiz_id' => 1,
+//        ]);
+//
+//        $response = $this->get('/quiz/1');
+//        $response->assertDontSeeText('Answer: ', false);
+//    }
 }

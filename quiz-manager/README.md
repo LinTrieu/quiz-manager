@@ -18,7 +18,7 @@
     - Issue: Send quiz ID to question controller and redirect to a list of questions 
 - A user can view questions per quiz ✅  
     - Only show the questions listed under specified quiz id
-- A user can see the answers to questions 
+- A user can view the answers to questions 
 
 🙌🏽 🎉 MVP 🎉🙌🏽     
 
@@ -44,9 +44,12 @@
 
 - PHP 7.3.11
 - Laravel Framework 7.15.0
-- Composer 
+- Composer, Dependency Manager
 - mySQL Database 
-- Eloquent ORM 
+- Eloquent, Database ORM
+- HTML, Blade templates
+- CSS, Bootstrap library
+- JavaScript, jQuery library
 
 ### How to set up & run application
  
