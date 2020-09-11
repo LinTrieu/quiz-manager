@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Quiz;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class QuizController extends Controller
@@ -25,10 +24,10 @@ class QuizController extends Controller
      */
     public function index(): View
     {
+        $permissionLevel = Auth::user()->permission_level;
         $quizzes = $this->quiz->all();
 
-//        $quizzes = Quiz::all();
-        return view('quiz.quiz_list', array( 'quizzes' => $quizzes));
+        return view('quiz.quiz_list', array( 'quizzes' => $quizzes, 'permissionLevel' => $permissionLevel));
     }
 
     /**

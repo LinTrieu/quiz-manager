@@ -3,9 +3,11 @@
 @section('content')
     <div class="container">
 
-        <div class="row justify-content-center">
-            <button type="button" class="btn btn-primary" onclick="window.location.href='/quiz/create';">Add a new Quiz</button>
-        </div>
+        @if( $permissionLevel != 1)
+            <div class="row justify-content-center">
+                <button type="button" class="btn btn-primary" onclick="window.location.href='/quiz/create';">Add a new Quiz</button>
+            </div>
+        @endif
 
         <div class="row justify-content-center mt-3">
             <div class="col-md-9">
