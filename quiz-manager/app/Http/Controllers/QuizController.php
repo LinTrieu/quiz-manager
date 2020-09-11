@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Quiz;
+use App\Models\UserPermission;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -34,10 +35,16 @@ class QuizController extends Controller
     /**
      * Show the form for creating a new Quiz.
      *
-     * @return View
+     * @return View|RedirectResponse
      */
-    public function create(): View
+    public function create()
     {
+        $permissionLevel = Auth::user()->permission_level;
+
+        if ($permissionLevel == UserPermission::PERMISSION_RESTRICT) {
+            return redirect('/quiz');
+        }
+
         return view('quiz.new_quiz');
     }
 
