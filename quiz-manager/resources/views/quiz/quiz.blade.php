@@ -11,21 +11,28 @@
                         @foreach ($questions as $question)
                             <div class="mb-4">
                                 <p class="font-weight-bold"> Question {{ $question['id'] }}. {{ $question['description'] }} </p>
-                                <p> Options </p>
-                                <li> A: {{ $question['option_a'] }} </li>
-                                <li> B: {{ $question['option_b'] }} </li>
-                                <li> C: {{ $question['option_c'] }} </li>
-                                <li> D: {{ $question['option_d'] }} </li>
-                                <li> E: {{ $question['option_e'] }} </li>
-                                <br>
-                                <p class="answer-key">
-                                    Answer: {{ $question['answer_key'] }}
-                                </p>
+                                @if( $permissionLevel != \App\Models\UserPermission::PERMISSION_RESTRICT)
+                                    <div class="answer-options">
+                                        <p> Options: </p>
+                                        <li> A: {{ $question['option_a'] }} </li>
+                                        <li> B: {{ $question['option_b'] }} </li>
+                                        <li> C: {{ $question['option_c'] }} </li>
+                                        <li> D: {{ $question['option_d'] }} </li>
+                                        <li> E: {{ $question['option_e'] }} </li>
+                                        <br>
+                                        <p class="answer-key">
+                                            Answer: {{ $question['answer_key'] }}
+                                        </p>
+                                    </div>
+                                @endif
                             </div>
                         @endforeach
                     </div>
-                    <div class="card-footer row justify-content-center">
+{{--                    <div class="card-footer row justify-content-center">--}}
+                    <div class="card-footer justify-content-center">
+                    @if($permissionLevel != \App\Models\UserPermission::PERMISSION_RESTRICT)
                         <a class="btn btn-primary show-answers">Reveal Answers</a>
+                    @endif
                     </div>
                 </div>
             </div>

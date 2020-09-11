@@ -2,10 +2,9 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use UserPermission;
+use App\Models\UserPermission;
 
 /**
  * Class User
@@ -22,6 +21,11 @@ class User extends Authenticatable
     use Notifiable;
 
     protected $table = 'user';
+
+    protected function getUserPermissionLevel(User $user): UserPermission
+    {
+        return $user->permission_level;
+    }
 
     /**
      * The attributes that are mass assignable.

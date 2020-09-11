@@ -22,13 +22,29 @@ class UserSeeder extends Seeder
 
         factory(User::class, self::NUMBER_OF_USERS)->create();
 
-        // fixed user login details for manual testing purposes
-        $lin = new User();
-        $lin->first_name = 'L';
-        $lin->last_name = 'T';
-        $lin->email = 'lt@gmail.com';
-        $lin->password = Hash::make('password');
-        $lin->permission_level = 3;
-        $lin->save();
+        // pre-configured user data for manual testing purposes
+        $restricted = new User();
+        $restricted->first_name = 'Restricted';
+        $restricted->last_name = 'User';
+        $restricted->email = 'restricted@test.com';
+        $restricted->password = Hash::make('password');
+        $restricted->permission_level = 1;
+        $restricted->save();
+
+        $view = new User();
+        $view->first_name = 'View';
+        $view->last_name = 'User';
+        $view->email = 'view@test.com';
+        $view->password = Hash::make('password');
+        $view->permission_level = 2;
+        $view->save();
+
+        $edit = new User();
+        $edit->first_name = 'Edit';
+        $edit->last_name = 'User';
+        $edit->email = 'edit@test.com';
+        $edit->password = Hash::make('password');
+        $edit->permission_level = 3;
+        $edit->save();
     }
 }

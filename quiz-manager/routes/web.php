@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +29,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/quiz', 'QuizController@index');
 
 Route::get('quiz/{quiz_id}', [
-    'uses' => 'QuestionController@listByQuizId',
+    'uses' => 'QuestionController@listQuestionsByQuizId',
     'as' => 'quiz.id',
 ]);

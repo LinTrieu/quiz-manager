@@ -58,6 +58,7 @@ class QuizTest extends TestCase
         ]);
 
         $response = $this->get('/quiz/1');
+        $response->assertViewIs('quiz.quiz');
         $response->assertSuccessful();
 
         $response->assertSee($questionQuizOne->description);
@@ -80,4 +81,76 @@ class QuizTest extends TestCase
 //        $response = $this->get('/quiz/1');
 //        $response->assertDontSeeText('Answer: ', false);
 //    }
+
+    public function testRestrictedUserCannotViewAnswers(): void
+    {
+        $this->loginWithRestrictedUser();
+        factory(Quiz::class)->create();
+        factory(Question::class, 10)->create([
+            'quiz_id' => 1,
+        ]);
+
+        $response = $this->get('/quiz/1');
+
+        $response->assertSuccessful();
+        $response->assertDontSeeText('Options:');
+    }
+
+    public function testViewUserCanViewAnswers(): void
+    {
+        $this->loginWithViewUser();
+        factory(Quiz::class)->create();
+        factory(Question::class, 10)->create([
+            'quiz_id' => 1,
+        ]);
+
+        $response = $this->get('/quiz/1');
+        $response->assertSuccessful();
+
+        $response->assertSeeText('Options:');
+    }
+
+    public function testEditUserCanViewAnswers(): void
+    {
+        $this->loginWithEditUser();
+        factory(Quiz::class)->create();
+        factory(Question::class, 10)->create([
+            'quiz_id' => 1,
+        ]);
+
+        $response = $this->get('/quiz/1');
+        $response->assertSuccessful();
+
+        $response->assertSeeText('Options:');
+    }
+
+
+    public function testRestrictedUserCannotSelectRevealAnswers(): void
+    {
+        $this->loginWithRestrictedUser();
+        factory(Quiz::class)->create();
+        factory(Question::class, 10)->create([
+            'quiz_id' => 1,
+        ]);
+
+        $response = $this->get('/quiz/1');
+
+        $response->assertSuccessful();
+        $response->assertDontSeeText('Reveal Answers');
+    }
+
+    public function testEditUserCanSelectRevealAnswers(): void
+    {
+        $this->loginWithEditUser();
+        factory(Quiz::class)->create();
+        factory(Question::class, 10)->create([
+            'quiz_id' => 1,
+        ]);
+
+        $response = $this->get('/quiz/1');
+
+        $response->assertSuccessful();
+        $response->assertSeeText('Reveal Answers');
+    }
+
 }
