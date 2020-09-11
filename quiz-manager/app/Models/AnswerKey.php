@@ -12,9 +12,9 @@ use MyCLabs\Enum\Enum;
  */
 class AnswerKey extends Enum
 {
-    public const ANSWER_OPTION_A = 'a';
-    public const ANSWER_OPTION_B = 'b';
-    public const ANSWER_OPTION_C = 'c';
-    public const ANSWER_OPTION_D = 'd';
-    public const ANSWER_OPTION_E = 'e';
+    public const ANSWER_OPTION_A = 'A';
+    public const ANSWER_OPTION_B = 'B';
+    public const ANSWER_OPTION_C = 'C';
+    public const ANSWER_OPTION_D = 'D';
+    public const ANSWER_OPTION_E = 'E';
 }

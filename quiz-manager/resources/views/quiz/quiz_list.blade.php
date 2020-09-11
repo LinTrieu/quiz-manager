@@ -8,7 +8,7 @@
         </div>
 
         <div class="row justify-content-center mt-3">
-            <div class="col-md-8">
+            <div class="col-md-9">
                 <div class="card">
                     <div class="card-header"> {{ __('Quizzes') }} </div>
 
@@ -25,7 +25,7 @@
 
         {{--    TODO: implement design option- List quizzes per card element. Would be cleaner and clearer. Optional if enough time permits --}}
         {{--    <div class="row justify-content-center mt-3">--}}
-        {{--        <div class="col-md-8">--}}
+        {{--        <div class="col-md-9">--}}
         {{--            <div class="card">--}}
         {{--                <div class="card-header"> {{ __('Quiz') }} </div>--}}
 

@@ -45,7 +45,7 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 90px;
                 /*text-transform: uppercase;*/
             }
 
@@ -83,10 +83,8 @@
 
         <div
             class="content">
-            <div
-                class="title m-b-md">
-                Quiz
-                Manager
+            <div class="title m-b-md">
+                Quiz Manager
             </div>
 
             <div
