@@ -2,9 +2,9 @@
 
 namespace Tests\Feature;
 
+use App\Models\Quiz;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
-use Mockery;
 
 class QuizListTest extends TestCase
 {
@@ -39,7 +39,39 @@ class QuizListTest extends TestCase
         $this->assertGuest();
     }
 
-    //testDatabaseHasTheQuizzes
+    public function testEditUserCanDeleteAQuiz(): void
+    {
+        $this->loginWithEditUser();
+
+        $quiz = factory(Quiz::class)->create([
+            'id' => $quiz_id = 1,
+            'title' => 'Maths Quiz',
+        ]);
+
+        $response = $this->delete('/quiz/'.$quiz_id);
+
+        $response->assertStatus(302);
+        $response->assertRedirect('/quiz');
+        $this->get('/quiz')->assertDontSeeText($quiz->title);
+        $this->assertDatabaseMissing('quiz',['id' => $quiz->id]);
+    }
+
+    public function testViewUserCannotDeleteAQuiz(): void
+    {
+        $this->loginWithViewUser();
+
+        $quiz = factory(Quiz::class)->create([
+            'id' => $quiz_id = 1,
+            'title' => 'English Quiz',
+        ]);
+
+        $response = $this->delete('/quiz/'.$quiz_id);
+
+        $response->assertStatus(302);
+        $response->assertRedirect('/quiz');
+        $this->get('/quiz')->assertSeeText($quiz->title);
+        $this->assertDatabaseHas('quiz',['id' => $quiz->id]);
+    }
 
 //$this->assertDatabaseHas();
 //    public function testAllQuizzesAreListedOnQuizList(): void

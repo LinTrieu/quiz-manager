@@ -24,12 +24,12 @@ class QuestionController extends Controller
      * @param int $quizId
      * @return View
      */
-    protected function listQuestionsByQuizId(int $quizId): View {
+    protected function index(int $quizId): View {
         $permissionLevel = Auth::user()->permission_level;
         $questions = $this->question->all();
 
         $questionsByQuizId = $questions->where('quiz_id', $quizId);
-        return view('quiz.quiz', array('questions' => $questionsByQuizId, 'permissionLevel' => $permissionLevel));
+        return view('quiz.quiz', array('questions' => $questionsByQuizId, 'permissionLevel' => $permissionLevel, 'quizId'=>$quizId));
     }
 
     /**
@@ -37,7 +37,7 @@ class QuestionController extends Controller
      *
      * @return Response
      */
-    public function create()
+    public function create(): Response
     {
         //
     }
@@ -45,10 +45,10 @@ class QuestionController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(Request $request): Response
     {
         //
     }
@@ -56,10 +56,10 @@ class QuestionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\models\Question  $question
+     * @param  Question  $question
      * @return Response
      */
-    public function show(Question $question)
+    public function show(Question $question): Response
     {
         //
     }
@@ -67,10 +67,10 @@ class QuestionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\models\Question  $question
+     * @param  Question  $question
      * @return Response
      */
-    public function edit(Question $question)
+    public function edit(Question $question): Response
     {
         //
     }
@@ -78,11 +78,11 @@ class QuestionController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\models\Question  $question
+     * @param  Request  $request
+     * @param Question  $question
      * @return Response
      */
-    public function update(Request $request, Question $question)
+    public function update(Request $request, Question $question): Response
     {
         //
     }
@@ -90,10 +90,10 @@ class QuestionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\models\Question  $question
+     * @param  Question  $question
      * @return Response
      */
-    public function destroy(Question $question)
+    public function destroy(Question $question): Response
     {
         //
     }

@@ -24,10 +24,13 @@ Auth::routes([
     'verify' => false, // Email Verification Routes
 ]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
 // Quiz List
-Route::get('/quiz', 'QuizController@index');
+Route::get('/quiz', [
+    'uses' =>  'QuizController@index',
+    'as' => 'quiz.index',
+]);
 
 // Create a New Quiz
 Route::get('/quiz/create', 'QuizController@create');
@@ -36,8 +39,14 @@ Route::post('/quiz/store',[
     'as' => 'quiz.store',
 ]);
 
-// Find a Quiz
+// Delete a Quiz
+Route::delete('/quiz/{quiz_id}', [
+   'uses' => 'QuizController@destroy',
+   'as' => 'quiz.destroy',
+]);
+
+// Show Questions in Quiz
 Route::get('/quiz/{quiz_id}', [
-    'uses' => 'QuestionController@listQuestionsByQuizId',
-    'as' => 'quiz.id',
+    'uses' => 'QuestionController@index',
+    'as' => 'question.show',
 ]);

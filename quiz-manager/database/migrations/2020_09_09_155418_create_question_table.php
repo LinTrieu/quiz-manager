@@ -30,7 +30,8 @@ class CreateQuestionTable extends Migration
         });
 
         Schema::table(self::TABLE_NAME, function (Blueprint $table) {
-            $table->foreign('quiz_id')->references('id')->on('quiz');
+            $table->foreign('quiz_id')->references('id')->on('quiz')
+                ->onDelete('cascade');;
         });
     }
 

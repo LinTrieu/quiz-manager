@@ -6,6 +6,7 @@ use App\Models\Quiz;
 use App\Models\UserPermission;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
@@ -60,17 +61,34 @@ class QuizController extends Controller
         $quiz->save();
 
         return redirect('/quiz')->with('completed', 'Quiz has been saved');
+    }
 
+    /**
+     * Delete the specified Quiz from database.
+     *
+     * @param int $quizId
+     * @return Response
+     */
+    public function destroy(int $quizId): RedirectResponse
+    {
+        $quiz = Quiz::find($quizId);
+        $permissionLevel = Auth::user()->permission_level;
+
+        if ($permissionLevel == UserPermission::PERMISSION_EDIT) {
+            $quiz->delete();
+            return redirect('/quiz')->with('success', 'Successfully deleted your quiz!');
+        }
+        return redirect('/quiz')->with('error', 'You are not authorized to delete this quiz');
     }
 
     // NOTE: below lists all laravel auto-generated controller methods
     /**
      * Display the specified resource.
      *
-     * @param  \App\models\Quiz  $quiz
-     * @return \Illuminate\Http\Response
+     * @param  Quiz  $quiz
+     * @return Response
      */
-    public function show(Quiz $quiz)
+    public function show(Quiz $quiz): Response
     {
         //
     }
@@ -78,10 +96,10 @@ class QuizController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\models\Quiz  $quiz
-     * @return \Illuminate\Http\Response
+     * @param  Quiz  $quiz
+     * @return Response
      */
-    public function edit(Quiz $quiz)
+    public function edit(Quiz $quiz): Response
     {
         //
     }
@@ -89,22 +107,11 @@ class QuizController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\models\Quiz  $quiz
-     * @return \Illuminate\Http\Response
+     * @param  Request  $request
+     * @param  Quiz  $quiz
+     * @return Response
      */
-    public function update(Request $request, Quiz $quiz)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\models\Quiz  $quiz
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Quiz $quiz)
+    public function update(Request $request, Quiz $quiz): Response
     {
         //
     }
