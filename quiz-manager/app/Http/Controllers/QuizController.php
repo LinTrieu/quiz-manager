@@ -67,7 +67,7 @@ class QuizController extends Controller
      * Delete the specified Quiz from database.
      *
      * @param int $quizId
-     * @return Response
+     * @return RedirectResponse
      */
     public function destroy(int $quizId): RedirectResponse
     {

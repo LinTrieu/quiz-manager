@@ -34,11 +34,12 @@ Login Details:
 🙌🏽 🎉 MVP 🎉🙌🏽     
 
 - Different users have different user access permissions
-- A restricted user can only see questions 
-- A user can add a quiz 
-- A user can add a question 
-- A user can edit a quiz
-- A user can edit a question 
+- A restricted user can only view questions ✅   
+- An edit user can add a quiz  ✅  
+- An edit user can delete a quiz and its associated questions/answers ✅  
+- An edit user can add a question and its answers 
+- An edit user can delete a question and its answers 
+- An edit user can edit a question or answer 
 
  -------------------------------------
 

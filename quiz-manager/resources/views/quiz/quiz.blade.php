@@ -5,36 +5,42 @@
         <div class="row justify-content-center">
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header"> {{ __('Quiz') }} </div>
+                    <div class="card-header"> {{ __('Quiz: ') . $quiz['title'] }} </div>
 
                     <div class="card-body">
+                        <ol type="1">
                         @foreach ($questions as $question)
                             <div class="mb-4">
-                                <p class="font-weight-bold"> Question {{ $question['id'] }}. {{ $question['description'] }} </p>
+                                <li>
+                                    <p class="font-weight-bold"> {{ $question['description'] }} </p>
+                                </li>
                                 @if( $permissionLevel != UserPermission::PERMISSION_RESTRICT)
+                                    Options:
+                                    <ol type="A">
                                     <div class="answer-options">
-                                        <p> Options: </p>
-                                        <li> A: {{ $question['option_a'] }} </li>
-                                        <li> B: {{ $question['option_b'] }} </li>
-                                        <li> C: {{ $question['option_c'] }} </li>
-                                        <li> D: {{ $question['option_d'] }} </li>
-                                        <li> E: {{ $question['option_e'] }} </li>
+                                        <li> {{ $question['option_a'] }} </li>
+                                        <li> {{ $question['option_b'] }} </li>
+                                        <li> {{ $question['option_c'] }} </li>
+                                        <li> {{ $question['option_d'] }} </li>
+                                        <li> {{ $question['option_e'] }} </li>
                                         <br>
                                         <p class="answer-key">
                                             Answer: {{ $question['answer_key'] }}
                                         </p>
                                     </div>
+                                    </ol>
                                 @endif
                             </div>
                         @endforeach
+                        </ol>
                     </div>
                     <div class="card-footer btn-toolbar justify-content-center">
                     @if($permissionLevel != UserPermission::PERMISSION_RESTRICT)
-                        <a class="btn-sm btn-primary show-answers mx-2"> Reveal Answers </a>
+                        <button class="btn-sm btn-primary show-answers mx-2"> Reveal Answers </button>
                     @endif
 
                     @if($permissionLevel == UserPermission::PERMISSION_EDIT)
-                        <form action="{{ route('quiz.destroy',['quiz_id' => $quizId]) }}" method="POST" style="float:right">
+                        <form action="{{ route('quiz.destroy',['quiz_id' => $quiz['id']]) }}" method="POST" style="float:right">
                             @method('DELETE')
                             @csrf
                             <span class="ml-auto">
