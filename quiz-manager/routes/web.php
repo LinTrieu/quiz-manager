@@ -31,7 +31,7 @@ Route::get('/quiz', 'QuizController@index');
 
 // Create a New Quiz
 Route::get('/quiz/create', 'QuizController@create');
-Route::post('/quiz/create',[
+Route::post('/quiz/store',[
     'uses' => 'QuizController@store',
     'as' => 'quiz.store',
 ]);

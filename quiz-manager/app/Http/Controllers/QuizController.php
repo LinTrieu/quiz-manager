@@ -40,12 +40,10 @@ class QuizController extends Controller
     public function create()
     {
         $permissionLevel = Auth::user()->permission_level;
-
-        if ($permissionLevel == UserPermission::PERMISSION_RESTRICT) {
-            return redirect('/quiz');
+        if ($permissionLevel == UserPermission::PERMISSION_EDIT) {
+            return view('quiz.new_quiz');
         }
-
-        return view('quiz.new_quiz');
+        return redirect('/quiz');
     }
 
     /**
