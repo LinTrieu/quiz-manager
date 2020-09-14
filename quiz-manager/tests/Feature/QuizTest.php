@@ -99,14 +99,12 @@ class QuizTest extends TestCase
     public function testViewUserCanViewAnswers(): void
     {
         $this->loginWithViewUser();
-        factory(Quiz::class)->create();
+        $questions = factory(Quiz::class)->create();
         factory(Question::class, 10)->create([
             'quiz_id' => 1,
         ]);
 
         $response = $this->get('/quiz/1');
-        $response->assertSuccessful();
-
         $response->assertSeeText('Options:');
     }
 
@@ -120,10 +118,8 @@ class QuizTest extends TestCase
 
         $response = $this->get('/quiz/1');
         $response->assertSuccessful();
-
         $response->assertSeeText('Options:');
     }
-
 
     public function testRestrictedUserCannotSelectRevealAnswers(): void
     {

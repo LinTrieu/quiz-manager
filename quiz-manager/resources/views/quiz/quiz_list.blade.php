@@ -10,14 +10,14 @@
         <div class="row justify-content-center mt-3">
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header"> {{ __('Quizzes') }} </div>
+                    <div class="card-header"> {{ __('All Quizzes') }} </div>
 
                     <div class="card-body">
                         <ol>
                         @foreach ($quizzes as $quiz)
                                 <li>
                                     <p class="d-flex">
-                                    <a href="{{ route('question.show', ['quiz_id' => $quiz['id']]) }}"> {{ $quiz['title']  }} </a>
+                                    <a href="{{ route('question.show', ['quiz' => $quiz]) }}"> {{ $quiz['title']  }} </a>
                                 </li>
                         @endforeach
                         </ol>

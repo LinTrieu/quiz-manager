@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header"> {{ __('Quiz') }} </div>
+                    <div class="card-header"> {{ __('Quiz: ') . $quiz['title'] }} </div>
 
                     <div class="card-body">
                         <ol type="1">
@@ -15,6 +15,7 @@
                                     <p class="font-weight-bold"> {{ $question['description'] }} </p>
                                 </li>
                                 @if( $permissionLevel != UserPermission::PERMISSION_RESTRICT)
+                                    Options:
                                     <ol type="A">
                                     <div class="answer-options">
                                         <li> {{ $question['option_a'] }} </li>
@@ -35,11 +36,11 @@
                     </div>
                     <div class="card-footer btn-toolbar justify-content-center">
                     @if($permissionLevel != UserPermission::PERMISSION_RESTRICT)
-                        <a class="btn-sm btn-primary show-answers mx-2"> Reveal Answers </a>
+                        <button class="btn-sm btn-primary show-answers mx-2"> Reveal Answers </button>
                     @endif
 
                     @if($permissionLevel == UserPermission::PERMISSION_EDIT)
-                        <form action="{{ route('quiz.destroy',['quiz_id' => $quizId]) }}" method="POST" style="float:right">
+                        <form action="{{ route('quiz.destroy',['quiz_id' => $quiz['id']]) }}" method="POST" style="float:right">
                             @method('DELETE')
                             @csrf
                             <span class="ml-auto">

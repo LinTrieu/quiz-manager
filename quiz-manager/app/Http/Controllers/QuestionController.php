@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Question;
+use App\Models\Quiz;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
@@ -19,17 +20,17 @@ class QuestionController extends Controller
     }
 
     /**
-     * Displays questions by quiz id
+     * Displays a list of questions by quiz id
      *
-     * @param int $quizId
+     * @param Quiz $quiz
      * @return View
      */
-    protected function index(int $quizId): View {
-        $permissionLevel = Auth::user()->permission_level;
+    protected function index(Quiz $quiz): View {
+        $permissionLevel = Auth::user()->permission_level;;
         $questions = $this->question->all();
 
-        $questionsByQuizId = $questions->where('quiz_id', $quizId);
-        return view('quiz.quiz', array('questions' => $questionsByQuizId, 'permissionLevel' => $permissionLevel, 'quizId'=>$quizId));
+        $questionsByQuizId = $questions->where('quiz_id', $quiz->id);
+        return view('quiz.quiz', array('questions' => $questionsByQuizId, 'permissionLevel' => $permissionLevel, 'quiz'=>$quiz));
     }
 
     /**

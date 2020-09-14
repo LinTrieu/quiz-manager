@@ -24,9 +24,10 @@ Auth::routes([
     'verify' => false, // Email Verification Routes
 ]);
 
+// generic laravel scaffolding, remove if no issues.
 //Route::get('/home', 'HomeController@index')->name('home');
 
-// Quiz List
+// Show Quiz List
 Route::get('/quiz', [
     'uses' =>  'QuizController@index',
     'as' => 'quiz.index',
@@ -45,8 +46,8 @@ Route::delete('/quiz/{quiz_id}', [
    'as' => 'quiz.destroy',
 ]);
 
-// Show Questions in Quiz
-Route::get('/quiz/{quiz_id}', [
+// Show Questions in a Quiz
+Route::get('/quiz/{quiz}', [
     'uses' => 'QuestionController@index',
     'as' => 'question.show',
 ]);
