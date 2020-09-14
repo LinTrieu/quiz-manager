@@ -5,7 +5,7 @@ use Illuminate\Database\Seeder;
 
 class QuizSeeder extends Seeder
 {
-    const NUMBER_OF_QUIZZES = 20;
+    const NUMBER_OF_QUIZZES = 10;
 
     /**
      * Run the database seeds.

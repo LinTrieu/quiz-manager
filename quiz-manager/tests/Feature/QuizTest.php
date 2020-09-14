@@ -11,7 +11,7 @@ class QuizTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function testUserCanViewQuizList(): void
+    public function testUserCanViewAQuiz(): void
     {
         $this->loginWithFakeUser();
 

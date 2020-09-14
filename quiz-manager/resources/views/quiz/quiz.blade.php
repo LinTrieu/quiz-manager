@@ -28,10 +28,19 @@
                             </div>
                         @endforeach
                     </div>
-{{--                    <div class="card-footer row justify-content-center">--}}
-                    <div class="card-footer justify-content-center">
+                    <div class="card-footer btn-toolbar justify-content-center">
                     @if($permissionLevel != UserPermission::PERMISSION_RESTRICT)
-                        <a class="btn btn-primary show-answers">Reveal Answers</a>
+                        <a class="btn-sm btn-primary show-answers mx-2"> Reveal Answers </a>
+                    @endif
+
+                    @if($permissionLevel == UserPermission::PERMISSION_EDIT)
+                        <form action="{{ route('quiz.destroy',['quiz_id' => $quizId]) }}" method="POST" style="float:right">
+                            @method('DELETE')
+                            @csrf
+                            <span class="ml-auto">
+                                <button type="submit" class="btn-sm btn-primary mx-2">Delete quiz</button>
+                            </span>
+                        </form>
                     @endif
                     </div>
                 </div>

@@ -8,6 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Quiz Manager') }}</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/img/puzzle.svg') }}"/>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -18,9 +19,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     {{--    Scripts--}}
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Bootstrap's JavaScript library -->
+    <script src="{{ asset('bootstrap/js/jquery.min.js') }}"></script>
     <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}" type="text/javascript" ></script>
 </head>
 <body>
@@ -48,7 +47,6 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -58,14 +56,18 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
+{{--                            @if (Route::has('register'))--}}
+{{--                                <li class="nav-item">--}}
+{{--                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>--}}
+{{--                                </li>--}}
+{{--                            @endif--}}
                         @else
-                            <li class="nav-item">
-                                {{ Auth::user()->name }}
+{{--                            <li class="nav-item">--}}
+{{--                                {{ Auth::user()->first_name }}--}}
+{{--                            </li>--}}
+
+                            <li class="nav-item px-3">
+                                <a class="nav-link" href="{{ route('quiz.index') }}"> {{ __('Quizzes') }} </a>
                             </li>
 
                             <li class="nav-item">
