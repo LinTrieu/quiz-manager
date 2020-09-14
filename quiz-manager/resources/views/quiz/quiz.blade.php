@@ -8,27 +8,26 @@
                     <div class="card-header"> {{ __('Quiz') }} </div>
 
                     <div class="card-body">
-                        <ol>
+                        <ol type="1">
                         @foreach ($questions as $question)
                             <div class="mb-4">
                                 <li>
                                     <p class="font-weight-bold"> {{ $question['description'] }} </p>
                                 </li>
                                 @if( $permissionLevel != UserPermission::PERMISSION_RESTRICT)
-                                    <ul>
+                                    <ol type="A">
                                     <div class="answer-options">
-{{--                                        <p> Options: </p>--}}
-                                        <li> A: {{ $question['option_a'] }} </li>
-                                        <li> B: {{ $question['option_b'] }} </li>
-                                        <li> C: {{ $question['option_c'] }} </li>
-                                        <li> D: {{ $question['option_d'] }} </li>
-                                        <li> E: {{ $question['option_e'] }} </li>
+                                        <li> {{ $question['option_a'] }} </li>
+                                        <li> {{ $question['option_b'] }} </li>
+                                        <li> {{ $question['option_c'] }} </li>
+                                        <li> {{ $question['option_d'] }} </li>
+                                        <li> {{ $question['option_e'] }} </li>
                                         <br>
                                         <p class="answer-key">
                                             Answer: {{ $question['answer_key'] }}
                                         </p>
                                     </div>
-                                    </ul>
+                                    </ol>
                                 @endif
                             </div>
                         @endforeach
