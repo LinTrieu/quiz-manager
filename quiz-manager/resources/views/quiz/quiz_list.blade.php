@@ -13,10 +13,14 @@
                     <div class="card-header"> {{ __('Quizzes') }} </div>
 
                     <div class="card-body">
+                        <ol>
                         @foreach ($quizzes as $quiz)
-                            <p class="d-flex">
-                                <a href="{{ route('question.show', ['quiz_id' => $quiz['id']]) }}"> Quiz {{ $quiz['id'] }} - {{ $quiz['title']  }} </a>
+                                <li>
+                                    <p class="d-flex">
+                                    <a href="{{ route('question.show', ['quiz_id' => $quiz['id']]) }}"> {{ $quiz['title']  }} </a>
+                                </li>
                         @endforeach
+                        </ol>
                     </div>
                     <div class="card-footer">
                     </div>
