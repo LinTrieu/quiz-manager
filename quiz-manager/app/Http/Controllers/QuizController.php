@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Quiz;
+use App\Models\UserPermission;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
@@ -18,7 +20,7 @@ class QuizController extends Controller
     }
 
     /**
-     * Display a list of available Quizzes.
+     * Display a list of all Quizzes.
      *
      * @return View
      */
@@ -31,26 +33,37 @@ class QuizController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new Quiz.
      *
-     * @return \Illuminate\Http\Response
+     * @return View|RedirectResponse
      */
     public function create()
     {
-        //
+        $permissionLevel = Auth::user()->permission_level;
+        if ($permissionLevel == UserPermission::PERMISSION_EDIT) {
+            return view('quiz.new_quiz');
+        }
+        return redirect('/quiz');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created Quiz in database.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return RedirectResponse
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
-        //
+        $quiz = new Quiz();
+//        $quiz->title = $request->get('quiz_title');
+        $quiz->title = $request->input('quiz_title');
+        $quiz->save();
+
+        return redirect('/quiz')->with('completed', 'Quiz has been saved');
+
     }
 
+    // NOTE: below lists all laravel auto-generated controller methods
     /**
      * Display the specified resource.
      *

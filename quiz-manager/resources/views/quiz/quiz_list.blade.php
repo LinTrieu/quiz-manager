@@ -1,10 +1,11 @@
 @extends('layouts.master')
-@section('title', 'Quizzes')
+@section('title', 'All Quizzes')
 @section('content')
     <div class="container">
-        @if( $permissionLevel != 1)
+        @if($permissionLevel == UserPermission::PERMISSION_EDIT)
         <div class="row justify-content-center">
-            <button type="button" class="btn btn-primary" onclick="window.location.href='/quiz/create';">Add a new Quiz</button>
+{{--            <button type="button" class="btn btn-primary" onclick="window.location.href='/quiz/create';">Add a new Quiz</button>--}}
+            <a href="{{ url('quiz/create') }}" class="btn btn-primary"> Add a new Quiz </a>
         </div>
         @endif
         <div class="row justify-content-center mt-3">

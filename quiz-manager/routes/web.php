@@ -26,9 +26,18 @@ Auth::routes([
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// Quiz List
 Route::get('/quiz', 'QuizController@index');
 
-Route::get('quiz/{quiz_id}', [
+// Create a New Quiz
+Route::get('/quiz/create', 'QuizController@create');
+Route::post('/quiz/store',[
+    'uses' => 'QuizController@store',
+    'as' => 'quiz.store',
+]);
+
+// Find a Quiz
+Route::get('/quiz/{quiz_id}', [
     'uses' => 'QuestionController@listQuestionsByQuizId',
     'as' => 'quiz.id',
 ]);
