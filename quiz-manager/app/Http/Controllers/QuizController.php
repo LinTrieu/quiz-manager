@@ -56,7 +56,6 @@ class QuizController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $quiz = new Quiz();
-//        $quiz->title = $request->get('quiz_title');
         $quiz->title = $request->input('quiz_title');
         $quiz->save();
 

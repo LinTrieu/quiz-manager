@@ -34,18 +34,22 @@ Route::get('/quiz', [
 ]);
 
 // Create a New Quiz
-Route::get('/quiz/create', 'QuizController@create');
-Route::post('/quiz/store',[
+Route::get('/quiz/create', [
+    'uses' =>  'QuizController@create',
+    'as' => 'quiz.create'
+]);
+Route::post('/quiz', [
     'uses' => 'QuizController@store',
     'as' => 'quiz.store',
 ]);
 
 // Create a New Question
-Route::get('/quiz/{quiz_id}/create', [
+//Route::get('/question/{quiz_id}/create', [
+Route::get('/question/create/{quiz}', [
     'uses' => 'QuestionController@create',
     'as' => 'question.create'
 ]);
-Route::post('/quiz/{quiz_id}/store',[
+Route::post('/question', [
     'uses' => 'QuestionController@store',
     'as' => 'question.store',
 ]);

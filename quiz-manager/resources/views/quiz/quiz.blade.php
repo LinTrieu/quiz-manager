@@ -40,8 +40,8 @@
                     @endif
 
                     @if($permissionLevel == UserPermission::PERMISSION_EDIT)
-                        <form action="{{ route('question.create',['quiz_id' => $quiz['id']]) }}" method="POST" style="float:right">
-                            @method('POST')
+                        <form action="{{ route('question.create', ['quiz' => $quiz]) }}" method="GET" style="float:right">
+                            @method('GET')
                             @csrf
                             <span class="ml-auto">
                                 <button type="submit" class="btn-sm btn-primary mx-2">Add a new Question</button>
