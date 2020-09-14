@@ -20,7 +20,7 @@ use Illuminate\Database\Eloquent\Factory;
 
 $factory->define(Question::class, function (Faker $faker) {
     return [
-        'description' => $faker->sentence,
+        'description' => $faker->sentence . '?',
         'quiz_id' => Quiz::all()->random()->id,
         'answer_key' => $faker->randomElement(['A','B','C','D','E']),
         'option_a' => $faker->word,

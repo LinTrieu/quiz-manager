@@ -8,12 +8,16 @@
                     <div class="card-header"> {{ __('Quiz') }} </div>
 
                     <div class="card-body">
+                        <ol>
                         @foreach ($questions as $question)
                             <div class="mb-4">
-                                <p class="font-weight-bold"> Question {{ $question['id'] }}. {{ $question['description'] }} </p>
+                                <li>
+                                    <p class="font-weight-bold"> {{ $question['description'] }} </p>
+                                </li>
                                 @if( $permissionLevel != UserPermission::PERMISSION_RESTRICT)
+                                    <ul>
                                     <div class="answer-options">
-                                        <p> Options: </p>
+{{--                                        <p> Options: </p>--}}
                                         <li> A: {{ $question['option_a'] }} </li>
                                         <li> B: {{ $question['option_b'] }} </li>
                                         <li> C: {{ $question['option_c'] }} </li>
@@ -24,9 +28,11 @@
                                             Answer: {{ $question['answer_key'] }}
                                         </p>
                                     </div>
+                                    </ul>
                                 @endif
                             </div>
                         @endforeach
+                        </ol>
                     </div>
                     <div class="card-footer btn-toolbar justify-content-center">
                     @if($permissionLevel != UserPermission::PERMISSION_RESTRICT)
