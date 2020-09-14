@@ -28,12 +28,12 @@ class NewQuizTest extends TestCase
     }
 
     public function testEditUserCanCreateNewQuiz(): void
-{
-    $this->loginWithEditUser();
-    $response = $this->post('/quiz/store', [
-        'title' => 'European Geography',
-    ]);
+    {
+        $this->loginWithEditUser();
+        $response = $this->post('/quiz/store', [
+            'title' => 'European Geography',
+        ]);
 
-    $response->assertSeeText('European Geography');
-}
+        $response->assertSeeText('European Geography');
+    }
 }
