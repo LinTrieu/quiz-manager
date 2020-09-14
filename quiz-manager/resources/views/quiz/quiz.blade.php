@@ -40,6 +40,14 @@
                     @endif
 
                     @if($permissionLevel == UserPermission::PERMISSION_EDIT)
+                        <form action="{{ route('question.create',['quiz_id' => $quiz['id']]) }}" method="POST" style="float:right">
+                            @method('POST')
+                            @csrf
+                            <span class="ml-auto">
+                                <button type="submit" class="btn-sm btn-primary mx-2">Add a new Question</button>
+                            </span>
+                        </form>
+
                         <form action="{{ route('quiz.destroy',['quiz_id' => $quiz['id']]) }}" method="POST" style="float:right">
                             @method('DELETE')
                             @csrf
