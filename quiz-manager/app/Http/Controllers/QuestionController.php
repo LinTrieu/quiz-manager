@@ -9,7 +9,6 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 use Illuminate\View\View;
 
 class QuestionController extends Controller
@@ -44,11 +43,9 @@ class QuestionController extends Controller
      */
     public function create(Quiz $quiz)
     {
-        Log::debug("Quiz at QuestionController@create" . $quiz . '\n');
         $permissionLevel = Auth::user()->permission_level;
         if ($permissionLevel == UserPermission::PERMISSION_EDIT) {
-            Log::debug("Quiz inside the user check" . $quiz . '\n');
-            return view('question.new_question', array('quiz' => $quiz));
+            return view('question.new_question', array('quiz_id' => $quiz->id));
         }
         return redirect('/quiz/' . $quiz->id);
     }
@@ -57,26 +54,28 @@ class QuestionController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  Request  $request
-     * @param Quiz $quiz
      * @return RedirectResponse
      */
-    public function store(Request $request, Quiz $quiz): RedirectResponse
+    public function store(Request $request): RedirectResponse
     {
-        Log::debug("Quiz at QuestionController@store" . $quiz . '\n');
+        $quizId = $request->get('quiz_id');
+
         $question = new Question();
         $question->description = $request->input('question_description');
-        $question->quiz_id = $quiz->id;
-        //        $question->quiz_id = 1;
-
-//        $question->answer_key = $request->input('answer_key');
-//        $question->option_a = $request->input('option_a');
-//        $question->option_b = $request->input('option_b');
-//        $question->option_c = $request->input('option_c');
-//        $question->option_d = $request->input('option_d');
-//        $question->option_e = $request->input('option_e');
+        $question->quiz_id = $quizId;
+        $question->answer_key = $request->input('answer_key');
+        $question->option_a = $request->input('option_a');
+        $question->option_b = $request->input('option_b');
+        $question->option_c = $request->input('option_c');
+        if ($request->input('option_d')) {
+            $question->option_d = $request->input('option_d');
+        }
+        if ($request->input('option_e')) {
+            $question->option_e = $request->input('option_e');
+        }
         $question->save();
 
-        return redirect('/quiz/' . $quiz->id)->with('completed', 'Question has been saved');
+        return redirect('/quiz/' . $quizId)->with('completed', 'Question has been saved');
     }
 
     /**

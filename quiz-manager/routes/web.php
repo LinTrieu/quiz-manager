@@ -44,7 +44,6 @@ Route::post('/quiz', [
 ]);
 
 // Create a New Question
-//Route::get('/question/{quiz_id}/create', [
 Route::get('/question/create/{quiz}', [
     'uses' => 'QuestionController@create',
     'as' => 'question.create'
@@ -53,7 +52,6 @@ Route::post('/question', [
     'uses' => 'QuestionController@store',
     'as' => 'question.store',
 ]);
-
 
 // Delete a Quiz
 Route::delete('/quiz/{quiz_id}', [

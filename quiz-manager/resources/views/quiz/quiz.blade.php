@@ -44,7 +44,7 @@
                             @method('GET')
                             @csrf
                             <span class="ml-auto">
-                                <button type="submit" class="btn-sm btn-primary mx-2">Add a new Question</button>
+                                <button type="submit" class="btn-sm btn-primary mx-2">Add Question</button>
                             </span>
                         </form>
 
