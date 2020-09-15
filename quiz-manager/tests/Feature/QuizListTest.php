@@ -73,7 +73,7 @@ class QuizListTest extends TestCase
         $this->assertDatabaseHas('quiz',['id' => $quiz->id]);
     }
 
-//$this->assertDatabaseHas();
+
 //    public function testAllQuizzesAreListedOnQuizList(): void
 //    {
 //        $this->mock
@@ -84,8 +84,7 @@ class QuizListTest extends TestCase
 //        $this->app->instance('Quiz', $this->mock);
 //        $this->get('/quiz');
 //        $this->assertViewHas('quiz');
+//        $this->assertDatabaseHas();
 //    }
 //
-//    public function testEachQuizInListHasALink(): void
-//    {}
 }

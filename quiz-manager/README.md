@@ -8,7 +8,8 @@ Login Details:
 - Email: `restricted@test.com`
 - Email: `view@test.com`
 - Email: `edit@test.com`
-- Password (for all): `password` 
+
+Password (for all): `password` 
 
 
 ## Notes for Development - Project Planning
@@ -39,7 +40,9 @@ Login Details:
 - An edit user can delete a quiz and its associated questions/answers ✅  
 - An edit user can add a question and its answers 
 - An edit user can delete a question and its answers 
-- An edit user can edit a question or answer 
+- An edit user can edit a question or answer
+
+🙌🏽 🎉 Completed Product Features  🎉🙌🏽      
 
  -------------------------------------
 

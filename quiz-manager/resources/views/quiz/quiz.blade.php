@@ -12,7 +12,15 @@
                         @foreach ($questions as $question)
                             <div class="mb-4">
                                 <li>
-                                    <p class="font-weight-bold"> {{ $question['description'] }} </p>
+                                    <p class="font-weight-bold d-inline-block"> {{ $question['description'] }} </p>
+
+                                     <div class="d-inline-block float-right">
+                                         <form action="{{ route('question.destroy', $question) }}" method="POST">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button type="submit" class="btn btn-sm text-danger text-right">Delete question</button>
+                                        </form>
+                                    </div>
                                 </li>
                                 @if( $permissionLevel != UserPermission::PERMISSION_RESTRICT)
                                     Options:
@@ -40,7 +48,15 @@
                     @endif
 
                     @if($permissionLevel == UserPermission::PERMISSION_EDIT)
-                        <form action="{{ route('quiz.destroy',['quiz_id' => $quiz['id']]) }}" method="POST" style="float:right">
+                        <form action="{{ route('question.create', ['quiz' => $quiz]) }}" method="GET" style="float:right">
+                            @method('GET')
+                            @csrf
+                            <span class="ml-auto">
+                                <button type="submit" class="btn-sm btn-primary mx-2">Add Question</button>
+                            </span>
+                        </form>
+
+                        <form action="{{ route('quiz.destroy',['quiz' => $quiz]) }}" method="POST" style="float:right">
                             @method('DELETE')
                             @csrf
                             <span class="ml-auto">

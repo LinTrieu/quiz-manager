@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Quiz;
 use App\Models\UserPermission;
+use Exception;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -56,7 +57,6 @@ class QuizController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $quiz = new Quiz();
-//        $quiz->title = $request->get('quiz_title');
         $quiz->title = $request->input('quiz_title');
         $quiz->save();
 
@@ -66,12 +66,12 @@ class QuizController extends Controller
     /**
      * Delete the specified Quiz from database.
      *
-     * @param int $quizId
+     * @param Quiz $quiz
      * @return RedirectResponse
+     * @throws Exception
      */
-    public function destroy(int $quizId): RedirectResponse
+    public function destroy(Quiz $quiz): RedirectResponse
     {
-        $quiz = Quiz::find($quizId);
         $permissionLevel = Auth::user()->permission_level;
 
         if ($permissionLevel == UserPermission::PERMISSION_EDIT) {
