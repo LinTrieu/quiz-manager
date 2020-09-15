@@ -15,11 +15,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Quiz extends Model
 {
     protected $table = 'quiz';
-//
-//    public function __construct(array $attributes = [])
-//    {
-//        parent::__construct($attributes);
-//    }
+
     /**
      * The attributes that are mass assignable.
      *

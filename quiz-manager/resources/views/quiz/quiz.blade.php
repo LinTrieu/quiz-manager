@@ -65,15 +65,7 @@
                             </span>
                         </form>
 
-{{--                        <form action="{{ route('question.edit', ['quiz' => $quiz]) }}" method="GET" style="float:right">--}}
-{{--                            @method('GET')--}}
-{{--                            @csrf--}}
-{{--                            <span class="ml-auto">--}}
-{{--                                <button type="submit" class="btn-sm btn-primary mx-2">Edit Questions</button>--}}
-{{--                            </span>--}}
-{{--                        </form>--}}
-
-                            <form action="{{ route('quiz.destroy',['quiz' => $quiz]) }}" method="POST" style="float:right">
+                        <form action="{{ route('quiz.destroy',['quiz' => $quiz]) }}" method="POST" style="float:right">
                             @method('DELETE')
                             @csrf
                             <span class="ml-auto">

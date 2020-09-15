@@ -23,11 +23,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Question extends Model
 {
     protected $table = 'question';
-//
-//    public function __construct(array $attributes = [])
-//    {
-//        parent::__construct($attributes);
-//    }
 
     /**
      * The attributes that are mass assignable.
