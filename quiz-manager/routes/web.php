@@ -54,13 +54,13 @@ Route::post('/question', [
 ]);
 
 // Delete a Quiz
-Route::delete('/question/{question_id}', [
+Route::delete('/question/{question}', [
     'uses' => 'QuestionController@destroy',
     'as' => 'question.destroy',
 ]);
 
 // Delete a Quiz
-Route::delete('/quiz/{quiz_id}', [
+Route::delete('/quiz/{quiz}', [
    'uses' => 'QuizController@destroy',
    'as' => 'quiz.destroy',
 ]);

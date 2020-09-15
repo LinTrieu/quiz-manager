@@ -15,7 +15,7 @@
                                     <p class="font-weight-bold d-inline-block"> {{ $question['description'] }} </p>
 
                                      <div class="d-inline-block float-right">
-                                         <form action="{{ route('question.destroy', $question->id) }}" method="POST">
+                                         <form action="{{ route('question.destroy', $question) }}" method="POST">
                                             @method('DELETE')
                                             @csrf
                                             <button type="submit" class="btn btn-sm text-danger text-right">Delete question</button>
@@ -56,7 +56,7 @@
                             </span>
                         </form>
 
-                        <form action="{{ route('quiz.destroy',['quiz_id' => $quiz['id']]) }}" method="POST" style="float:right">
+                        <form action="{{ route('quiz.destroy',['quiz' => $quiz]) }}" method="POST" style="float:right">
                             @method('DELETE')
                             @csrf
                             <span class="ml-auto">

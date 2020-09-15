@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Question;
 use App\Models\Quiz;
 use App\Models\UserPermission;
+use Exception;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -83,12 +84,12 @@ class QuestionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $questionId
+     * @param Question $question
      * @return RedirectResponse
+     * @throws Exception
      */
-    public function destroy(int $questionId): RedirectResponse
+    public function destroy(Question $question): RedirectResponse
     {
-        $question = Question::find($questionId);
         $quizId = $question->quiz_id;
         $permissionLevel = Auth::user()->permission_level;
 
