@@ -12,7 +12,7 @@
                         @foreach ($questions as $question)
                             <div class="mb-4">
                                 <li>
-                                    <div class="font-weight-bold d-inline-block"> {{ $question['description'] }} </div>
+                                    <p class="font-weight-bold d-inline-block"> {{ $question['description'] }} </p>
 
                                      <div class="d-inline-block float-right">
                                          <form action="{{ route('question.destroy', $question->id) }}" method="POST">
