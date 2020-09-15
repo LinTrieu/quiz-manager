@@ -6,12 +6,10 @@ use App\Models\Question;
 use App\Models\Quiz;
 use App\Models\UserPermission;
 use Exception;
-use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 use Illuminate\View\View;
 
 class QuestionController extends Controller
@@ -106,7 +104,7 @@ class QuestionController extends Controller
      * @param  Question  $question
      * @return View|RedirectResponse
      */
-    public function edit(Question $question): View
+    public function edit(Question $question)
     {
         $permissionLevel = Auth::user()->permission_level;
         $quizId = $question->quiz_id;

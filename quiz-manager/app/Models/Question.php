@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
+use AnswerKey;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use AnswerKey;
 
 /**
  * Class Question
@@ -23,6 +23,11 @@ use AnswerKey;
 class Question extends Model
 {
     protected $table = 'question';
+//
+//    public function __construct(array $attributes = [])
+//    {
+//        parent::__construct($attributes);
+//    }
 
     /**
      * The attributes that are mass assignable.
@@ -30,7 +35,7 @@ class Question extends Model
      * @var array
      */
     protected $fillable = [
-        'description', 'answer_key', 'option_a', 'option_b', 'option_c', 'option_d', 'option_e'
+        'id', 'description', 'answer_key', 'option_a', 'option_b', 'option_c', 'option_d', 'option_e'
     ];
 
     public function quiz(): BelongsTo
