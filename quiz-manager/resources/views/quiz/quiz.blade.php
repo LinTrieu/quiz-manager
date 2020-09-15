@@ -18,7 +18,7 @@
                                         <form action="{{ route('question.destroy', $question) }}" method="POST">
                                             @method('DELETE')
                                             @csrf
-                                            <button type="submit" class="btn btn-sm text-danger">Delete question</button>
+                                            <button type="submit" class="btn btn-sm text-danger">Delete</button>
                                         </form>
                                     </div>
 
@@ -26,7 +26,7 @@
                                         <form action="{{ route('question.edit', $question) }}" method="GET">
                                             @method('GET')
                                             @csrf
-                                            <button type="submit" class="btn btn-sm text-primary">Edit Question</button>
+                                            <button type="submit" class="btn btn-sm text-primary">Edit</button>
                                         </form>
                                     </div>
 
