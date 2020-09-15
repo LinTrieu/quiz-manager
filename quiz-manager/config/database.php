@@ -40,6 +40,7 @@ return [
             'url' => env('DATABASE_URL'),
             'database' => env('DB_DATABASE', database_path('database.sqlite')),
             'prefix' => '',
+            'strict' => false,
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
 
