@@ -43,6 +43,18 @@ Route::post('/quiz', [
     'as' => 'quiz.store',
 ]);
 
+// Delete a Quiz
+Route::delete('/quiz/{quiz}', [
+    'uses' => 'QuizController@destroy',
+    'as' => 'quiz.destroy',
+]);
+
+// Show Questions in a Quiz
+Route::get('/quiz/{quiz}', [
+    'uses' => 'QuestionController@index',
+    'as' => 'question.show',
+]);
+
 // Create a New Question
 Route::get('/question/create/{quiz}', [
     'uses' => 'QuestionController@create',
@@ -53,21 +65,14 @@ Route::post('/question', [
     'as' => 'question.store',
 ]);
 
-// Delete a Quiz
+// Delete a Question
 Route::delete('/question/{question}', [
     'uses' => 'QuestionController@destroy',
     'as' => 'question.destroy',
 ]);
 
-// Delete a Quiz
-Route::delete('/quiz/{quiz}', [
-   'uses' => 'QuizController@destroy',
-   'as' => 'quiz.destroy',
+// Edit a Question
+Route::get('/question/{question}/edit', [
+    'uses' => 'QuestionController@edit',
+    'as' => 'question.edit'
 ]);
-
-// Show Questions in a Quiz
-Route::get('/quiz/{quiz}', [
-    'uses' => 'QuestionController@index',
-    'as' => 'question.show',
-]);
-
