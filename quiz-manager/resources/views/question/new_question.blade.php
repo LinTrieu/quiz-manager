@@ -27,7 +27,7 @@
                         </div>
 
 
-                        <div class="row justify-content-center mt-3">
+                        <div class="row justify-content-center mt-4">
                             <p>Input the multiple-choice options for your question <i>(minimum of three)</i></p>
                         </div>
                         <div class="form-group row">
