@@ -9,7 +9,11 @@
 
                 <div class="card-body">
 {{--                    <h5 class="card-title"></h5>--}}
-{{--                    <p class="card-text"></p>--}}
+                    <p class="card-text mx-1 mb-4">
+                        Add a new question to the quiz by inputting the question and associated answers in the form below. Please note that there are a <i>minimum</i> of three multiple-choice options.
+                    </p>
+
+
                     <form action="{{ route('question.store',['quiz_id' => $quiz_id]) }}" method="POST">
                         @csrf
                         @method('POST')
@@ -123,7 +127,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
+                        <div class="form-group row mb-0 mt-4">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Submit Question') }}

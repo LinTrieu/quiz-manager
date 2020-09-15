@@ -7,8 +7,11 @@
                 <div class="card">
                     <div class="card-header">{{ __('Edit Question') }}</div>
                     <div class="card-body">
-                        {{--                    <h5 class="card-title"></h5>--}}
-                        {{--                    <p class="card-text"></p>--}}
+{{--                        <h5 class="card-title"></h5>--}}
+                        <p class="card-text mx-1 mb-4">
+                            Edit the existing question by inputting the updated question and/or answers in the form below. Please note that there are a <i>minimum</i> of three multiple-choice options.
+                        </p>
+
                         <form action="{{ route('question.update',['question' => $question]) }}" method="POST">
                             @csrf
                             @method('PUT')
@@ -27,10 +30,6 @@
                                 </div>
                             </div>
 
-
-                            <div class="row justify-content-center mt-4">
-                                <p>Edit the multiple-choice options for this question <i>(minimum of three)</i></p>
-                            </div>
                             <div class="form-group row">
                                 <label for="option_a" class="col-md-4 col-form-label text-md-right">{{ __('Option A') }} </label>
 
@@ -116,7 +115,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row mb-0">
+                            <div class="form-group row mb-0 mt-4">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
                                         {{ __('Submit Updates') }}
