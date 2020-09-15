@@ -6,12 +6,13 @@ use App\Models\Question;
 use App\Models\Quiz;
 use App\Models\UserPermission;
 use Exception;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Illuminate\View\View;
-use PhpParser\Node\Expr\BinaryOp\Identical;
 
 class QuestionController extends Controller
 {
@@ -125,10 +126,18 @@ class QuestionController extends Controller
      */
     public function update(Request $request, Question $question): RedirectResponse
     {
-        $quidId = $question->quiz_id;
+        $editQuestion = Question::find($question->id);
 
-        $question->save();
-        return redirect('/quiz/'.$quidId)->with('success', 'Successfully updated your question.');
+        $editQuestion->description =  $request->input('question_description');
+        $editQuestion->option_a =$request->input('option_a');
+        $editQuestion->option_b = $request->input('option_b');
+        $editQuestion->option_c = $request->input('option_c');
+        $editQuestion->option_d = $request->input('option_d');
+        $editQuestion->option_e = $request->input('option_e');
+        $editQuestion->answer_key = $request->input('answer_key');
+        $editQuestion->save();
+
+        return redirect('/quiz/'.$question->quiz_id)->with('success', 'Successfully updated your question.');
     }
 
 
