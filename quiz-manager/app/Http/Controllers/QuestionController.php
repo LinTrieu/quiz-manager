@@ -11,7 +11,6 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
-use PhpParser\Node\Expr\BinaryOp\Identical;
 
 class QuestionController extends Controller
 {
@@ -24,7 +23,7 @@ class QuestionController extends Controller
     }
 
     /**
-     * Displays a list of questions by quiz id
+     * Displays a list of Questions by Quiz ID.
      *
      * @param Quiz $quiz
      * @return View
@@ -53,7 +52,7 @@ class QuestionController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created Question in storage.
      *
      * @param  Request  $request
      * @return RedirectResponse
@@ -77,12 +76,11 @@ class QuestionController extends Controller
         }
         $question->save();
 
-        return redirect('/quiz/' . $quizId)->with('completed', 'Question has been saved');
+        return redirect('/quiz/'.$quizId)->with('completed', 'Question has been saved');
     }
 
-
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified Question from storage.
      *
      * @param Question $question
      * @return RedirectResponse
@@ -100,6 +98,46 @@ class QuestionController extends Controller
         return redirect('/quiz/'.$quizId)->with('error', 'You are not authorized to delete this question');
     }
 
+    /**
+     * Show the form for editing the specified Question.
+     *
+     * @param  Question  $question
+     * @return View|RedirectResponse
+     */
+    public function edit(Question $question)
+    {
+        $permissionLevel = Auth::user()->permission_level;
+        $quizId = $question->quiz_id;
+
+        if ($permissionLevel == UserPermission::PERMISSION_EDIT) {
+            return View('question.edit_question', array('question' => $question));
+        }
+        return redirect('/quiz/'.$quizId)->with('error', 'You are not authorized to edit this question');
+    }
+
+    /**
+     * Update the specified Question in storage.
+     *
+     * @param  Request  $request
+     * @param Question  $question
+     * @return RedirectResponse
+     */
+    public function update(Request $request, Question $question): RedirectResponse
+    {
+        $editQuestion = Question::find($question->id);
+
+        $editQuestion->description =  $request->input('question_description');
+        $editQuestion->option_a =$request->input('option_a');
+        $editQuestion->option_b = $request->input('option_b');
+        $editQuestion->option_c = $request->input('option_c');
+        $editQuestion->option_d = $request->input('option_d');
+        $editQuestion->option_e = $request->input('option_e');
+        $editQuestion->answer_key = $request->input('answer_key');
+        $editQuestion->save();
+
+        return redirect('/quiz/'.$question->quiz_id)->with('success', 'Successfully updated your question.');
+    }
+
 
     // NOTE: below lists all laravel auto-generated controller methods
     /**
@@ -109,29 +147,6 @@ class QuestionController extends Controller
      * @return Response
      */
     public function show(Question $question): Response
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  Question  $question
-     * @return Response
-     */
-    public function edit(Question $question): Response
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  Request  $request
-     * @param Question  $question
-     * @return Response
-     */
-    public function update(Request $request, Question $question): Response
     {
         //
     }

@@ -14,13 +14,22 @@
                                 <li>
                                     <p class="font-weight-bold d-inline-block"> {{ $question['description'] }} </p>
 
-                                     <div class="d-inline-block float-right">
-                                         <form action="{{ route('question.destroy', $question) }}" method="POST">
+                                    <div class="d-inline-block float-right">
+                                        <form action="{{ route('question.destroy', $question) }}" method="POST">
                                             @method('DELETE')
                                             @csrf
-                                            <button type="submit" class="btn btn-sm text-danger text-right">Delete question</button>
+                                            <button type="submit" class="btn btn-sm text-danger">Delete</button>
                                         </form>
                                     </div>
+
+                                    <div class="d-inline-block float-right">
+                                        <form action="{{ route('question.edit', $question) }}" method="GET">
+                                            @method('GET')
+                                            @csrf
+                                            <button type="submit" class="btn btn-sm text-primary">Edit</button>
+                                        </form>
+                                    </div>
+
                                 </li>
                                 @if( $permissionLevel != UserPermission::PERMISSION_RESTRICT)
                                     Options:
@@ -56,11 +65,19 @@
                             </span>
                         </form>
 
-                        <form action="{{ route('quiz.destroy',['quiz' => $quiz]) }}" method="POST" style="float:right">
+{{--                        <form action="{{ route('question.edit', ['quiz' => $quiz]) }}" method="GET" style="float:right">--}}
+{{--                            @method('GET')--}}
+{{--                            @csrf--}}
+{{--                            <span class="ml-auto">--}}
+{{--                                <button type="submit" class="btn-sm btn-primary mx-2">Edit Questions</button>--}}
+{{--                            </span>--}}
+{{--                        </form>--}}
+
+                            <form action="{{ route('quiz.destroy',['quiz' => $quiz]) }}" method="POST" style="float:right">
                             @method('DELETE')
                             @csrf
                             <span class="ml-auto">
-                                <button type="submit" class="btn-sm btn-primary mx-2">Delete quiz</button>
+                                <button type="submit" class="btn-sm btn-primary mx-2">Delete Quiz</button>
                             </span>
                         </form>
                     @endif
