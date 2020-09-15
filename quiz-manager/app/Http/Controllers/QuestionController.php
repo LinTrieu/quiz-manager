@@ -77,7 +77,7 @@ class QuestionController extends Controller
         }
         $question->save();
 
-        return redirect('/quiz/' . $quizId)->with('completed', 'Question has been saved');
+        return redirect('/quiz/'.$quizId)->with('completed', 'Question has been saved');
     }
 
 
@@ -100,6 +100,22 @@ class QuestionController extends Controller
         return redirect('/quiz/'.$quizId)->with('error', 'You are not authorized to delete this question');
     }
 
+    /**
+     * Show the form for editing the specified Question.
+     *
+     * @param  Question  $question
+     * @return View|RedirectResponse
+     */
+    public function edit(Question $question): View
+    {
+        $permissionLevel = Auth::user()->permission_level;
+        $quizId = $question->quiz_id;
+
+        if ($permissionLevel == UserPermission::PERMISSION_EDIT) {
+            return View('question.edit_question', array('question' => $question));
+        }
+        return redirect('/quiz/'.$quizId)->with('error', 'You are not authorized to edit this question');
+    }
 
     // NOTE: below lists all laravel auto-generated controller methods
     /**
@@ -109,17 +125,6 @@ class QuestionController extends Controller
      * @return Response
      */
     public function show(Question $question): Response
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  Question  $question
-     * @return Response
-     */
-    public function edit(Question $question): Response
     {
         //
     }
