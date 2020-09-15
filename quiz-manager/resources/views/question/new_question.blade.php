@@ -8,9 +8,11 @@
                 <div class="card-header">{{ __('Create a New Question') }}</div>
 
                 <div class="card-body">
+{{--                    <h5 class="card-title"></h5>--}}
+{{--                    <p class="card-text"></p>--}}
                     <form action="{{ route('question.store',['quiz_id' => $quiz_id]) }}" method="POST">
-                        @method('POST')
                         @csrf
+                        @method('POST')
 
                         <div class="form-group row">
                             <label for="question_description" class="col-md-4 col-form-label text-md-right">{{ __('Question description') }} </label>

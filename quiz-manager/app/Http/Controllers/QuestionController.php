@@ -24,7 +24,7 @@ class QuestionController extends Controller
     }
 
     /**
-     * Displays a list of questions by quiz id
+     * Displays a list of Questions by Quiz ID.
      *
      * @param Quiz $quiz
      * @return View
@@ -53,7 +53,7 @@ class QuestionController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created Question in storage.
      *
      * @param  Request  $request
      * @return RedirectResponse
@@ -80,9 +80,8 @@ class QuestionController extends Controller
         return redirect('/quiz/'.$quizId)->with('completed', 'Question has been saved');
     }
 
-
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified Question from storage.
      *
      * @param Question $question
      * @return RedirectResponse
@@ -117,6 +116,22 @@ class QuestionController extends Controller
         return redirect('/quiz/'.$quizId)->with('error', 'You are not authorized to edit this question');
     }
 
+    /**
+     * Update the specified Question in storage.
+     *
+     * @param  Request  $request
+     * @param Question  $question
+     * @return RedirectResponse
+     */
+    public function update(Request $request, Question $question): RedirectResponse
+    {
+        $quidId = $question->quiz_id;
+
+        $question->save();
+        return redirect('/quiz/'.$quidId)->with('success', 'Successfully updated your question.');
+    }
+
+
     // NOTE: below lists all laravel auto-generated controller methods
     /**
      * Display the specified resource.
@@ -125,18 +140,6 @@ class QuestionController extends Controller
      * @return Response
      */
     public function show(Question $question): Response
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  Request  $request
-     * @param Question  $question
-     * @return Response
-     */
-    public function update(Request $request, Question $question): Response
     {
         //
     }

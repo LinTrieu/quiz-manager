@@ -76,3 +76,7 @@ Route::get('/question/{question}/edit', [
     'uses' => 'QuestionController@edit',
     'as' => 'question.edit'
 ]);
+Route::put('/question/{question}', [
+    'uses' => 'QuestionController@update',
+    'as' => 'question.update'
+]);
