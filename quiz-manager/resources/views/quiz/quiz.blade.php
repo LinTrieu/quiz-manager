@@ -15,6 +15,14 @@
                                     <p class="font-weight-bold d-inline-block"> {{ $question['description'] }} </p>
 
                                     <div class="d-inline-block float-right">
+                                        <form action="{{ route('question.destroy', $question) }}" method="POST">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button type="submit" class="btn btn-sm text-danger">Delete question</button>
+                                        </form>
+                                    </div>
+
+                                    <div class="d-inline-block float-right">
                                         <form action="{{ route('question.edit', $question) }}" method="GET">
                                             @method('GET')
                                             @csrf
@@ -22,13 +30,6 @@
                                         </form>
                                     </div>
 
-                                     <div class="d-inline-block float-right">
-                                         <form action="{{ route('question.destroy', $question) }}" method="POST">
-                                            @method('DELETE')
-                                            @csrf
-                                            <button type="submit" class="btn btn-sm text-danger">Delete question</button>
-                                        </form>
-                                     </div>
                                 </li>
                                 @if( $permissionLevel != UserPermission::PERMISSION_RESTRICT)
                                     Options:
