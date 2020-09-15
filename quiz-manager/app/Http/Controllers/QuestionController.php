@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use PhpParser\Node\Expr\BinaryOp\Identical;
 
 class QuestionController extends Controller
 {
@@ -78,6 +79,28 @@ class QuestionController extends Controller
         return redirect('/quiz/' . $quizId)->with('completed', 'Question has been saved');
     }
 
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $questionId
+     * @return RedirectResponse
+     */
+    public function destroy(int $questionId): RedirectResponse
+    {
+        $question = Question::find($questionId);
+        $quizId = $question->quiz_id;
+        $permissionLevel = Auth::user()->permission_level;
+
+        if ($permissionLevel == UserPermission::PERMISSION_EDIT) {
+            $question->delete();
+            return redirect('/quiz/'.$quizId)->with('success', 'Successfully deleted your question!');
+        }
+        return redirect('/quiz/'.$quizId)->with('error', 'You are not authorized to delete this question');
+    }
+
+
+    // NOTE: below lists all laravel auto-generated controller methods
     /**
      * Display the specified resource.
      *
@@ -108,17 +131,6 @@ class QuestionController extends Controller
      * @return Response
      */
     public function update(Request $request, Question $question): Response
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  Question  $question
-     * @return Response
-     */
-    public function destroy(Question $question): Response
     {
         //
     }

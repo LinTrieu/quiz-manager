@@ -54,6 +54,12 @@ Route::post('/question', [
 ]);
 
 // Delete a Quiz
+Route::delete('/question/{question_id}', [
+    'uses' => 'QuestionController@destroy',
+    'as' => 'question.destroy',
+]);
+
+// Delete a Quiz
 Route::delete('/quiz/{quiz_id}', [
    'uses' => 'QuizController@destroy',
    'as' => 'quiz.destroy',
@@ -64,3 +70,4 @@ Route::get('/quiz/{quiz}', [
     'uses' => 'QuestionController@index',
     'as' => 'question.show',
 ]);
+

@@ -12,7 +12,15 @@
                         @foreach ($questions as $question)
                             <div class="mb-4">
                                 <li>
-                                    <p class="font-weight-bold"> {{ $question['description'] }} </p>
+                                    <div class="font-weight-bold d-inline-block"> {{ $question['description'] }} </div>
+
+                                     <div class="d-inline-block float-right">
+                                         <form action="{{ route('question.destroy', $question->id) }}" method="POST">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button type="submit" class="btn btn-sm text-danger text-right">Delete question</button>
+                                        </form>
+                                    </div>
                                 </li>
                                 @if( $permissionLevel != UserPermission::PERMISSION_RESTRICT)
                                     Options:
