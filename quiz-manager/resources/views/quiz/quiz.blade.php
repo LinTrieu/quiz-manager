@@ -15,12 +15,23 @@
                                     <p class="font-weight-bold d-inline-block"> {{ $question['description'] }} </p>
 
                                     <div class="d-inline-block float-right">
-                                        <form action="{{ route('question.destroy', $question) }}" method="POST">
+                                        <form action="{{ route('question.destroy', $question) }}" method="POST" id="delete-question">
                                             @method('DELETE')
                                             @csrf
-                                            <button type="submit" class="btn btn-sm text-danger">Delete</button>
+{{--                                            <button type="submit" class="btn btn-sm text-danger">Delete</button>--}}
                                         </form>
                                     </div>
+
+                                    <a class="btn btn-sm text-danger float-right" onclick="if (confirm('Are you sure you want to delete this Question?')) {
+                                        event.preventDefault();
+                                        document.getElementById('delete-question').submit();
+                                        }else{
+                                        event.preventDefault();
+                                        }">Delete
+                                    </a>
+
+
+
 
                                     <div class="d-inline-block float-right">
                                         <form action="{{ route('question.edit', $question) }}" method="GET">
@@ -53,11 +64,11 @@
                     </div>
                     <div class="card-footer btn-toolbar justify-content-center">
                     @if($permissionLevel != UserPermission::PERMISSION_RESTRICT)
-                        <button class="btn-sm btn-primary show-answers mx-2"> Reveal Answers </button>
+                        <button class="btn-sm btn-primary mx-2 show-answers"> Reveal Answers </button>
                     @endif
 
                     @if($permissionLevel == UserPermission::PERMISSION_EDIT)
-                        <form action="{{ route('question.create', ['quiz' => $quiz]) }}" method="GET" style="float:right">
+                        <form action="{{ route('question.create', ['quiz' => $quiz]) }}" method="GET" class="float-right">
                             @method('GET')
                             @csrf
                             <span class="ml-auto">
@@ -65,13 +76,17 @@
                             </span>
                         </form>
 
-                        <form action="{{ route('quiz.destroy',['quiz' => $quiz]) }}" method="POST" style="float:right">
+                        <form action="{{ route('quiz.destroy',['quiz' => $quiz]) }}" method="POST" class="float-right" id="delete-quiz">
                             @method('DELETE')
                             @csrf
-                            <span class="ml-auto">
-                                <button type="submit" class="btn-sm btn-primary mx-2">Delete Quiz</button>
-                            </span>
                         </form>
+                        <a class="btn btn-sm btn-primary mx-2" onclick="if (confirm('Are you sure you want to delete this Quiz: {{ $quiz->title  }}?')) {
+                            event.preventDefault();
+                            document.getElementById('delete-quiz').submit();
+                            }else{
+                            event.preventDefault();
+                            }">Delete Quiz
+                        </a>
                     @endif
                     </div>
                 </div>
@@ -84,7 +99,7 @@
             $(".answer-key").hide();
 
             $(".show-answers").click(function(){
-                $(".answer-key").show();
+                $(".answer-key").toggle();
             });
         });
     </script>

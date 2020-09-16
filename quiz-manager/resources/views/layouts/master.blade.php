@@ -11,8 +11,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/img/puzzle.svg') }}"/>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href='public/fonts/nunito.css' rel='stylesheet' type='text/css'>
 
     <!-- Styles -->
     <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
