@@ -6,13 +6,10 @@
         <div class="col-md-9">
             <div class="card">
                 <div class="card-header">{{ __('Create a New Question') }}</div>
-
                 <div class="card-body">
-{{--                    <h5 class="card-title"></h5>--}}
                     <p class="card-text mx-1 mb-4">
-                        Add a new question to the quiz by inputting the question and associated answers in the form below. Please note that there are a <i>minimum</i> of three multiple-choice options.
+                        Add a new question to the quiz by inputting the question and associated answers in the form below and selecting 'Submit Question'. Please note that there are a <i>minimum</i> of three multiple-choice options.
                     </p>
-
 
                     <form action="{{ route('question.store',['quiz_id' => $quiz_id]) }}" method="POST">
                         @csrf
@@ -33,10 +30,6 @@
                             </div>
                         </div>
 
-
-                        <div class="row justify-content-center mt-4">
-                            <p>Input the multiple-choice options for your question <i>(minimum of three)</i></p>
-                        </div>
                         <div class="form-group row">
                             <label for="option_a" class="col-md-4 col-form-label text-md-right">{{ __('Option A') }} </label>
 
@@ -88,7 +81,7 @@
 
                             <div class="col-md-6">
                                 <input id="option_d" type="text" class="form-control @error('option_d') is-invalid @enderror" name="option_d" value="{{ old('option_d') }}" autocomplete="option_d">
-                                <small id="emailHelp" class="form-text text-muted">Not mandatory</small>
+                                <small id="emailHelp" class="form-text text-muted">Optional</small>
 
                                 @error('option_d')
                                 <span class="invalid-feedback" role="alert">
@@ -103,7 +96,7 @@
 
                             <div class="col-md-6">
                                 <input id="option_e" type="text" class="form-control @error('option_e') is-invalid @enderror" name="option_e" value="{{ old('option_e') }}" autocomplete="option_e">
-                                <small id="emailHelp" class="form-text text-muted">Not mandatory</small>
+                                <small id="emailHelp" class="form-text text-muted">Optional</small>
 
                                 @error('option_e')
                                 <span class="invalid-feedback" role="alert">
@@ -117,8 +110,8 @@
                             <label for="answer_key" class="col-md-4 col-form-label text-md-right">{{ __('Correct answer') }} </label>
 
                             <div class="col-md-6">
-                                <input id="answer_key" type="text" class="form-control @error('answer_key') is-invalid @enderror" name="answer_key" value="{{ old('answer_key') }}" autocomplete="answer_key" pattern="[A-E]{1}" required placeholder="A, B, C, D or E" >
-                                <small id="emailHelp" class="form-text text-muted">Input an answer key, e.g. 'B'</small>
+                                <input id="answer_key" type="text" class="form-control @error('answer_key') is-invalid @enderror" name="answer_key" value="{{ old('answer_key') }}" autocomplete="answer_key" pattern="[A-E]{1}" required >
+                                <small id="emailHelp" class="form-text text-muted">Input the correct answer key: 'A', 'B', 'C', 'D' or 'E'</small>
                                 @error('answer_key')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

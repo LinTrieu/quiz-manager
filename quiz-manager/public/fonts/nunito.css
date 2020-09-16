@@ -1,0 +1,145 @@
+/*Fonts download from Google Fonts library and made available for offline use  */
+/* Please note all files contained with the '/public/fonts' directory have been sourced from Google Fonts .*/
+/* Previously I was connected to the Google Font API, which is a link to an externally hosted CDN, and therefore not available, eg. <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">*/
+
+
+@font-face {
+    font-family: 'nunitosemibold';
+    src: url('nunito-semibold-webfont.woff2') format('woff2'),
+    url('nunito-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'nunitoblack';
+    src: url('nunito-black-webfont.woff2') format('woff2'),
+    url('nunito-black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'nunitoblack_italic';
+    src: url('nunito-blackitalic-webfont.woff2') format('woff2'),
+    url('nunito-blackitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'nunitobold';
+    src: url('nunito-bold-webfont.woff2') format('woff2'),
+    url('nunito-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'nunitobold_italic';
+    src: url('nunito-bolditalic-webfont.woff2') format('woff2'),
+    url('nunito-bolditalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'nunitoextrabold';
+    src: url('nunito-extrabold-webfont.woff2') format('woff2'),
+    url('nunito-extrabold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'nunitoextrabold_italic';
+    src: url('nunito-extrabolditalic-webfont.woff2') format('woff2'),
+    url('nunito-extrabolditalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'nunitoextralight';
+    src: url('nunito-extralight-webfont.woff2') format('woff2'),
+    url('nunito-extralight-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'nunitoextralight_italic';
+    src: url('nunito-extralightitalic-webfont.woff2') format('woff2'),
+    url('nunito-extralightitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'nunitoitalic';
+    src: url('nunito-italic-webfont.woff2') format('woff2'),
+    url('nunito-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'nunitolight';
+    src: url('nunito-light-webfont.woff2') format('woff2'),
+    url('nunito-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'nunitolight_italic';
+    src: url('nunito-lightitalic-webfont.woff2') format('woff2'),
+    url('nunito-lightitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
