@@ -24,9 +24,6 @@ Auth::routes([
     'verify' => false, // Email Verification Routes
 ]);
 
-// generic laravel scaffolding, remove if no issues.
-//Route::get('/home', 'HomeController@index')->name('home');
-
 // Show Quiz List
 Route::get('/quiz', [
     'uses' =>  'QuizController@index',
