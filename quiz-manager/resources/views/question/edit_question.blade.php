@@ -8,7 +8,7 @@
                     <div class="card-header">{{ __('Edit Question') }}</div>
                     <div class="card-body">
                         <p class="card-text mx-1 mb-4">
-                            Edit the existing question and its associated answers by inputting the updated question and/or answers in the form below, before selecting 'Submit Changes'. Please note that there are a <i>minimum</i> of three multiple-choice options.
+                            Edit the existing question and its associated answers by inputting the updated question and/or answers in the form below before selecting 'Submit Changes'. Please note that there are a <i>minimum</i> of three multiple-choice options.
                         </p>
 
                         <form action="{{ route('question.update',['question' => $question]) }}" method="POST">
