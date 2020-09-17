@@ -20,6 +20,5 @@ class QuizSeeder extends Seeder
         }
 
         factory(Quiz::class, self::NUMBER_OF_QUIZZES)->create();
-
     }
 }

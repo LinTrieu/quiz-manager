@@ -1,4 +1,5 @@
 <?php
+// NOTE: Commented out as Registration functionality not yet required in QuizManager
 //
 //namespace App\Http\Controllers\Auth;
 //

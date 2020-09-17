@@ -1,3 +1,5 @@
+{{--// NOTE: Commented out as Registration functionality not yet required in QuizManager--}}
+{{----}}
 {{--@extends('layouts.master')--}}
 
 {{--@section('content')--}}

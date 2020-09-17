@@ -30,4 +30,3 @@ $factory->define(Question::class, function (Faker $faker) {
         'option_e' => $faker->word,
     ];
 });
-
