@@ -47,7 +47,7 @@ class LoginTest extends TestCase
     public function testUserCannotLoginWithIncorrectPassword(): void
     {
         $user = factory(User::class)->create([
-            'password' => Hash::make('password')
+            'password' => Hash::make('correct-password')
         ]);
 
         $response = $this->from('/login')->post('/login', [

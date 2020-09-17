@@ -7,7 +7,7 @@ use App\Models\Quiz;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class QuizTest extends TestCase
+class ViewQuizTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -64,23 +64,6 @@ class QuizTest extends TestCase
         $response->assertSee($questionQuizOne->description);
         $response->assertDontSee($questionQuizTwo->description);
     }
-
-    // fails as the assertion depends on browser? INVESTIGATE how to test this...
-//    public function testAnswersAreHiddenToUserByDefault(): void
-//    {
-//        $this->loginWithFakeUser();
-//
-//        $quiz = factory(Quiz::class)->create([
-//            'id' => 1,
-//        ]);
-//
-//        $questions = factory(Question::class, 10)->create([
-//            'quiz_id' => 1,
-//        ]);
-//
-//        $response = $this->get('/quiz/1');
-//        $response->assertDontSeeText('Answer: ', false);
-//    }
 
     public function testRestrictedUserCannotViewAnswers(): void
     {
@@ -148,5 +131,4 @@ class QuizTest extends TestCase
         $response->assertSuccessful();
         $response->assertSeeText('Reveal Answers');
     }
-
 }

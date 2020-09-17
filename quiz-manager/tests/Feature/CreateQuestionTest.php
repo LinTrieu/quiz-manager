@@ -6,7 +6,7 @@ use App\Models\Quiz;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class NewQuestionTest extends TestCase
+class CreateQuestionTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -30,21 +30,20 @@ class NewQuestionTest extends TestCase
         $response->assertRedirect('/quiz/' . $quiz->id);
     }
 
-//    public function testEditUserCanCreateANewQuestion(): void
-//    {
-//        $this->loginWithEditUser();
-//        $quiz = factory(Quiz::class)->create();
-//        $response = $this->post('/question', [
-//            'quiz_id' => $quiz->id,
-//            'description' => 'What is the capital of Thailand',
-//            'option_a' => 'Kuala Lumpur',
-//            'option_b' => 'Phuket',
-//            'option_c' => 'Bangkok',
-//            'answer_key' => 'C',
-//        ]);
-//
-//        $this->assertDatabaseHas('question', ['description' => 'What is the capital of Thailand']);
-//        $this->get('/quiz/'.$quiz->id)->assertSeeText('What is the capital of Thailand');
-//        $response->assertSeeText('What is the capital of Thailand');
-//    }
+    public function testEditUserCanCreateANewQuestion(): void
+    {
+        $this->loginWithEditUser();
+        $quiz = factory(Quiz::class)->create();
+
+        $response = $this->post('/question', [
+            'quiz_id' => $quiz->id,
+            'description' => 'What is the capital of Thailand',
+            'option_a' => 'Kuala Lumpur',
+            'option_b' => 'Phuket',
+            'option_c' => 'Bangkok',
+            'answer_key' => 'C',
+        ]);
+
+        $response->assertSeeText('What is the capital of Thailand');
+    }
 }

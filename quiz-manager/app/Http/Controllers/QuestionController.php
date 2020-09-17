@@ -28,8 +28,10 @@ class QuestionController extends Controller
      * @param Quiz $quiz
      * @return View
      */
-    protected function index(Quiz $quiz): View {
-        $permissionLevel = Auth::user()->permission_level;;
+    protected function index(Quiz $quiz): View
+    {
+        $permissionLevel = Auth::user()->permission_level;
+        ;
         $questions = $this->question->all();
 
         $questionsByQuizId = $questions->where('quiz_id', $quiz->id);

@@ -6,21 +6,9 @@ use App\Models\Quiz;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class QuizListTest extends TestCase
+class ViewQuizListTest extends TestCase
 {
     use RefreshDatabase;
-
-//    public function __construct()
-//    {
-//        parent::__construct();
-//        // We have no interest in testing Eloquent
-//        $this->mock = Mockery::mock('Eloquent', 'Quiz');
-//    }
-//
-//    public function tearDown(): void
-//    {
-//        Mockery::close();
-//    }
 
     public function testUserCanViewQuizList(): void
     {
@@ -53,7 +41,7 @@ class QuizListTest extends TestCase
         $response->assertStatus(302);
         $response->assertRedirect('/quiz');
         $this->get('/quiz')->assertDontSeeText($quiz->title);
-        $this->assertDatabaseMissing('quiz',['id' => $quiz->id]);
+        $this->assertDatabaseMissing('quiz', ['id' => $quiz->id]);
     }
 
     public function testViewUserCannotDeleteAQuiz(): void
@@ -70,21 +58,6 @@ class QuizListTest extends TestCase
         $response->assertStatus(302);
         $response->assertRedirect('/quiz');
         $this->get('/quiz')->assertSeeText($quiz->title);
-        $this->assertDatabaseHas('quiz',['id' => $quiz->id]);
+        $this->assertDatabaseHas('quiz', ['id' => $quiz->id]);
     }
-
-
-//    public function testAllQuizzesAreListedOnQuizList(): void
-//    {
-//        $this->mock
-//            ->shouldReceive('all')
-//            ->once()
-//            ->andReturn('foo');
-//
-//        $this->app->instance('Quiz', $this->mock);
-//        $this->get('/quiz');
-//        $this->assertViewHas('quiz');
-//        $this->assertDatabaseHas();
-//    }
-//
 }
