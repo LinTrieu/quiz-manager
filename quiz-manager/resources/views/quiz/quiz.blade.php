@@ -14,6 +14,7 @@
                             <li>
                                 <p class="font-weight-bold d-inline-block"> {{ $question['description'] }} </p>
 
+                                @if($permissionLevel == UserPermission::PERMISSION_EDIT)
                                 <div class="d-inline-block float-right">
                                     <form action="{{ route('question.destroy', $question) }}" method="POST"
                                         id="delete-question">
@@ -31,9 +32,6 @@
                                         }">Delete
                                 </a>
 
-
-
-
                                 <div class="d-inline-block float-right">
                                     <form action="{{ route('question.edit', $question) }}" method="GET">
                                         @method('GET')
@@ -41,7 +39,7 @@
                                         <button type="submit" class="btn btn-sm text-primary">Edit</button>
                                     </form>
                                 </div>
-
+                            @endif
                             </li>
                             @if( $permissionLevel != UserPermission::PERMISSION_RESTRICT)
                             Options:
