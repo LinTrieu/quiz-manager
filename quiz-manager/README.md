@@ -19,15 +19,16 @@ Password for all user accounts: `password`
 -------------------------------------
 
 ### How to set up & run application
+ For guidance please refer to the file ref: '2.2.setup_instructions_to_run_application' 
  
 1. Git clone repository,
-2. Set up a local  mySQL database named `quiz-manager` (more details below) 
+2. Install PHP, mySQL, Composer, and GNU's Make software.  
+2. Set up a local  mySQL database named `quiz-manager` (details below) 
 3. Compile CSS UI resources by running `npm install`, and build dev assets running `npm run dev` ,
 4. Run the command `make migrate-seed` to run database migrations and seeders,
 5. Run `make start` to start the server. View application on your localhost.
 
 See `Makefile` for a list of commands available in the application. 
-
 
 
 #### Create a local mySQL database
