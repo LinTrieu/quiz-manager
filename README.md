@@ -16,6 +16,7 @@ Duration: 09/09/2020 - 16/09/2020
 
  
 ##  User Account Login Details for Testing
+
 The application is pre-configured with three user accounts for each of the user permission levels. 
 
 Login Details: 
@@ -28,6 +29,7 @@ Password for all user accounts: `password`
 -------------------------------------
 
 ## How to set up & run application
+
  For guidance please refer to the file ref: '2.2.setup_instructions_to_run_application' 
  
 1. Git clone repository,
@@ -41,6 +43,7 @@ See `Makefile` for a list of commands available in the application.
 
 
 #### Create a local mySQL database
+
 1. Install the  mySQL client,
 
 2. Run the mySQL client - `$ mysql -u root -p`
@@ -58,6 +61,7 @@ See `Makefile` for a list of commands available in the application.
 5. Once your `.env` config is set up, run `make migrate` to confirm your Database connection is working as expected.
 
 -------------------------------------
+
 ## Technology Stack
 
 - PHP 7.3.11
