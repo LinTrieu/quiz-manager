@@ -15,7 +15,7 @@ Duration: 09/09/2020 - 16/09/2020
 - User brief: design, build, and test a database-driven website to manage quizzes, each consisting of a set of multiple-choice questions and their associated answers. 
 
  
-##  User Account Login Details for Testing
+###  User Account Login Details for Testing
 
 The application is pre-configured with three user accounts for each of the user permission levels. 
 
@@ -28,7 +28,7 @@ Password for all user accounts: `password`
 
 -------------------------------------
 
-## How to set up & run application
+### How to set up & run application
 
  For guidance please refer to the file ref: '2.2.setup_instructions_to_run_application' 
  
@@ -62,7 +62,7 @@ See `Makefile` for a list of commands available in the application.
 
 -------------------------------------
 
-## Technology Stack
+### Technology Stack
 
 - PHP 7.3.11
 - Laravel Framework 7.15.0
