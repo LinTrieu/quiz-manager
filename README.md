@@ -7,12 +7,12 @@ Project: Quiz Manager, BCS Synoptic Project
 Duration: 09/09/2020 - 16/09/2020
 
 -------
-### Quiz Manager README  
+## Quiz Manager README  
 
 ### Project Background 
 
-- You work for WebbiSkools Ltd, a software company that provides on-line educational solutions for education establishments and training providers. 
-- Your manager would like you to design, build, and test a database-driven website to manage quizzes, each consisting of a set of multiple-choice questions and their associated answers. 
+- Project work for WebbiSkools Ltd, a software company that provides on-line educational solutions for education establishments and training providers. 
+- User brief: design, build, and test a database-driven website to manage quizzes, each consisting of a set of multiple-choice questions and their associated answers. 
 
  
 ##  User Account Login Details for Testing
@@ -27,7 +27,7 @@ Password for all user accounts: `password`
 
 -------------------------------------
 
-### How to set up & run application
+## How to set up & run application
  For guidance please refer to the file ref: '2.2.setup_instructions_to_run_application' 
  
 1. Git clone repository,
@@ -58,7 +58,7 @@ See `Makefile` for a list of commands available in the application.
 5. Once your `.env` config is set up, run `make migrate` to confirm your Database connection is working as expected.
 
 -------------------------------------
-### Technology Stack
+## Technology Stack
 
 - PHP 7.3.11
 - Laravel Framework 7.15.0
