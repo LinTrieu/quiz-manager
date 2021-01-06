@@ -77,7 +77,7 @@ See `Makefile` for a list of commands available in the application.
 
 -------------------------------------
 
-### User Interface 
+### Application UI Screenshots 
 
 #### User Login page
 
