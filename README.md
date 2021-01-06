@@ -74,3 +74,30 @@ See `Makefile` for a list of commands available in the application.
 - HTML, Blade templates
 - CSS, Bootstrap library
 - JavaScript, jQuery library
+
+-------------------------------------
+
+### User Interface 
+
+#### User Login page
+
+![image](https://user-images.githubusercontent.com/36490540/103800035-c8fd3380-5043-11eb-8341-ec1db5fb8733.png)
+
+
+#### All Quizzes: homepage
+
+![image](https://user-images.githubusercontent.com/36490540/103797102-ef20d480-503f-11eb-96ff-56640202f69d.png)
+
+#### Example Quiz
+
+![image](https://user-images.githubusercontent.com/36490540/103797241-1ecfdc80-5040-11eb-9892-065cfccea6f6.png)
+
+
+#### Editing a Question form
+
+![image](https://user-images.githubusercontent.com/36490540/103797283-2d1df880-5040-11eb-934e-ee14379c596b.png)
+
+#### Adding a new Question form
+
+![image](https://user-images.githubusercontent.com/36490540/103797385-52126b80-5040-11eb-9a6b-e28c2d9d2e95.png)
+
