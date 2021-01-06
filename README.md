@@ -101,3 +101,4 @@ See `Makefile` for a list of commands available in the application.
 
 ![image](https://user-images.githubusercontent.com/36490540/103797385-52126b80-5040-11eb-9a6b-e28c2d9d2e95.png)
 
+-------------------------------------
