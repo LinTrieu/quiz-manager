@@ -34,10 +34,12 @@ Password for all user accounts: `password`
  
 1. Git clone repository,
 2. Install PHP, mySQL, Composer, and GNU's Make software.  
-2. Set up a local  mySQL database named `quiz-manager` (details below) 
-3. Compile CSS UI resources by running `npm install`, and build dev assets running `npm run dev` ,
-4. Run the command `make migrate-seed` to run database migrations and seeders,
-5. Run `make start` to start the server. View application on your localhost.
+3. Create a `.env` file which will contain sensitive credentials as environment variables (see `.env.example` file as an example) 
+    - In the root of your project, run `php artisan key:generate` and `php artisan config:cache` to generate an application key for your application (`APP_KEY` in `.env` file))
+4. Set up a local  mySQL database named `quiz-manager` (details below) 
+5. Compile CSS UI resources by running `npm install`, and build dev assets running `npm run dev` ,
+6. Run the command `make migrate-seed` to run database migrations and seeders,
+7. Run `make start` to start the server. View application on your localhost.
 
 See `Makefile` for a list of commands available in the application. 
 
@@ -72,4 +74,3 @@ See `Makefile` for a list of commands available in the application.
 - HTML, Blade templates
 - CSS, Bootstrap library
 - JavaScript, jQuery library
-
