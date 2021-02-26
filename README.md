@@ -1,6 +1,6 @@
-# Linna Trieu - Submission for BCS Synoptic Project
+# Lin Trieu - Submission for BCS Synoptic Project
 
-Student: Linna Trieu
+Author: Lin Trieu
 
 Project: Quiz Manager, BCS Synoptic Project
 
@@ -66,8 +66,8 @@ See `Makefile` for a list of commands available in the application.
 
 ### Technology Stack
 
-- PHP 7.3.11
-- Laravel Framework 7.15.0
+- PHP v7.3.11
+- Laravel Framework v7.15.0
 - Composer, Dependency Manager
 - mySQL Database 
 - Eloquent, Database ORM
@@ -77,7 +77,7 @@ See `Makefile` for a list of commands available in the application.
 
 -------------------------------------
 
-### Application UI Screenshots 
+### Screenshots of the Application's User Interface (UI) 
 
 #### User Login page
 
@@ -88,16 +88,16 @@ See `Makefile` for a list of commands available in the application.
 
 ![image](https://user-images.githubusercontent.com/36490540/103797102-ef20d480-503f-11eb-96ff-56640202f69d.png)
 
-#### Example Quiz
+#### Quiz example
 
 ![image](https://user-images.githubusercontent.com/36490540/103797241-1ecfdc80-5040-11eb-9892-065cfccea6f6.png)
 
 
-#### Editing a Question form
+#### Editing a Question in a Quiz
 
 ![image](https://user-images.githubusercontent.com/36490540/103797283-2d1df880-5040-11eb-934e-ee14379c596b.png)
 
-#### Adding a new Question form
+#### Adding a new Question to a Quiz
 
 ![image](https://user-images.githubusercontent.com/36490540/103797385-52126b80-5040-11eb-9a6b-e28c2d9d2e95.png)
 
