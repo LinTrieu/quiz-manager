@@ -11,7 +11,7 @@ Duration: 09/09/2020 - 16/09/2020
 
 ### Project Background 
 
-- Project work for WebbiSkools Ltd, a software company that provides on-line educational solutions for education establishments and training providers. 
+- WebbiSkools Ltd: a software company that provides on-line educational solutions for education establishments and training providers. 
 - User brief: design, build, and test a database-driven website to manage quizzes, each consisting of a set of multiple-choice questions and their associated answers. 
 
  
@@ -36,8 +36,8 @@ Password for all user accounts: `password`
 2. Install 
     - PHP
     - mySQL
-    - Composer, and 
-    - Makefile software.  
+    - Composer
+    - Makefile  
 3. Create a `.env` file which will contain sensitive credentials as environment variables (see `.env.example` file as an example) 
     - In the root of your project, run `php artisan key:generate` and `php artisan config:cache` to generate an application key for your application (`APP_KEY` in `.env` file))
 4. Set up a local  mySQL database named `quiz-manager` (details below) 
