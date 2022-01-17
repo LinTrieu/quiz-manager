@@ -37,7 +37,7 @@ Password for all user accounts: `password`
     - PHP
     - mySQL
     - Composer, and 
-    - GNU's Make software.  
+    - Makefile software.  
 3. Create a `.env` file which will contain sensitive credentials as environment variables (see `.env.example` file as an example) 
     - In the root of your project, run `php artisan key:generate` and `php artisan config:cache` to generate an application key for your application (`APP_KEY` in `.env` file))
 4. Set up a local  mySQL database named `quiz-manager` (details below) 
