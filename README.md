@@ -33,7 +33,11 @@ Password for all user accounts: `password`
  For guidance please refer to the file ref: '2.2.setup_instructions_to_run_application' 
  
 1. Git clone repository,
-2. Install PHP, mySQL, Composer, and GNU's Make software.  
+2. Install 
+    - PHP
+    - mySQL
+    - Composer, and 
+    - GNU's Make software.  
 3. Create a `.env` file which will contain sensitive credentials as environment variables (see `.env.example` file as an example) 
     - In the root of your project, run `php artisan key:generate` and `php artisan config:cache` to generate an application key for your application (`APP_KEY` in `.env` file))
 4. Set up a local  mySQL database named `quiz-manager` (details below) 
