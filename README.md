@@ -28,7 +28,7 @@ Password for all user accounts: `password`
 
 -------------------------------------
 
-### How to set up & run application
+### How to set up & run application for local development
 
  For guidance please refer to the file ref: '2.2.setup_instructions_to_run_application' 
  
@@ -37,11 +37,15 @@ Password for all user accounts: `password`
     - PHP
     - mySQL
     - Composer
+    - Node.js and NPM
     - Makefile  
 3. Create a `.env` file which will contain sensitive credentials as environment variables (see `.env.example` file as an example) 
     - In the root of your project, run `php artisan key:generate` and `php artisan config:cache` to generate an application key for your application (`APP_KEY` in `.env` file))
-4. Set up a local  mySQL database named `quiz-manager` (details below) 
-5. Compile CSS UI resources by running `npm install`, and build dev assets running `npm run dev` ,
+
+4. Compile CSS UI resources by running `npm install`, and build dev assets running `npm run dev`,
+
+5. Set up a local mySQL database named `quiz-manager` (details below) 
+
 6. Run the command `make migrate-seed` to run database migrations and seeders,
 7. Run `make start` to start the server. View application on your localhost.
 
