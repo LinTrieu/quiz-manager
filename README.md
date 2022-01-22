@@ -30,7 +30,7 @@ Password for all user accounts: `password`
 
 ### How to set up & run application for local development
 
- For guidance please refer to the file ref: '2.2.setup_instructions_to_run_application' 
+ For additional guidance, refer to file (2.2.setup_instructions_to_run_application)[https://github.com/LinTrieu/Linna-Trieu-SP/blob/master/documentation/2_construction/2.2.setup_instructions_to_run_application.pdf]
  
 1. Git clone repository,
 2. Install 
