@@ -1,18 +1,23 @@
-# Lin Trieu - Submission for BCS Synoptic Project
+# Lin Trieu, Quiz Manager Application
 
-Author: Lin Trieu
+### Technology Stack
 
-Project: Quiz Manager, BCS Synoptic Project
-
-Duration: 09/09/2020 - 16/09/2020
+- PHP v7.3.11
+- Laravel Framework v7.15.0
+- Composer, Dependency Manager
+- mySQL Database 
+- Eloquent, Database ORM
+- HTML, Blade templates
+- CSS, Bootstrap library
+- JavaScript, jQuery library
 
 -------
 ## Quiz Manager README  
 
-### Project Background 
+### Project Context
 
-- WebbiSkools Ltd: a software company that provides on-line educational solutions for education establishments and training providers. 
-- User brief: design, build, and test a database-driven website to manage quizzes, each consisting of a set of multiple-choice questions and their associated answers. 
+- Client: A software company that provides on-line educational solutions for education establishments and training providers.
+- Brief: design, build, and test a database-driven website to manage quizzes, each consisting of a set of multiple-choice questions and their associated answers. 
 
  
 ###  User Account Login Details for Testing
@@ -30,16 +35,18 @@ Password for all user accounts: `password`
 
 ### How to set up & run application for local development
 
- For additional guidance, refer to file (2.2.setup_instructions_to_run_application)[https://github.com/LinTrieu/Linna-Trieu-SP/blob/master/documentation/2_construction/2.2.setup_instructions_to_run_application.pdf]
+ For additional guidance, refer to file [2.2. Setup Instructions](https://github.com/LinTrieu/Linna-Trieu-SP/blob/master/documentation/2_construction/2.2.setup_instructions_to_run_application.pdf)
  
-1. Git clone repository,
+1. Git clone the GitHub repository
+
 2. Install 
     - PHP
     - mySQL
     - Composer
     - Node.js and NPM
     - Makefile  
-3. Create a `.env` file which will contain sensitive credentials as environment variables (see `.env.example` file as an example) 
+
+3. Create a `.env` file to contain sensitive credentials as environment variables (see `.env.example` file as an example) 
     - In the root of your project, run `php artisan key:generate` and `php artisan config:cache` to generate an application key for your application (`APP_KEY` in `.env` file))
 
 4. Compile CSS UI resources by running `npm install`, and build dev assets running `npm run dev`,
@@ -69,19 +76,6 @@ See `Makefile` for a list of commands available in the application.
     - `DB_USERNAME`, `DB_PASSWORD` - represent your personal mySQL user credentials 
 
 5. Once your `.env` config is set up, run `make migrate` to confirm your Database connection is working as expected.
-
--------------------------------------
-
-### Technology Stack
-
-- PHP v7.3.11
-- Laravel Framework v7.15.0
-- Composer, Dependency Manager
-- mySQL Database 
-- Eloquent, Database ORM
-- HTML, Blade templates
-- CSS, Bootstrap library
-- JavaScript, jQuery library
 
 -------------------------------------
 
