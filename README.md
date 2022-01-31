@@ -35,7 +35,7 @@ Password for all user accounts: `password`
 
 ### How to set up & run application for local development
 
- For additional guidance, refer to file [2.2. Setup Instructions](https://github.com/LinTrieu/Linna-Trieu-SP/blob/master/documentation/2_construction/2.2.setup_instructions_to_run_application.pdf)
+ For additional guidance, refer to file [2.2. Quiz Manager Setup Instructions](https://github.com/LinTrieu/Linna-Trieu-SP/blob/master/documentation/2_construction/2.2.setup_instructions_to_run_application.pdf)
  
 1. Git clone the GitHub repository
 
