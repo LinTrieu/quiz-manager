@@ -2,8 +2,8 @@
 
 ### Technology Stack
 
-- PHP v7.3.11
-- Laravel Framework v7.15.0
+- PHP v8.1.2 (prev. 7.3.11)
+- Laravel Framework v8.80.0 (prev. v7.15.0)
 - Composer, Dependency Manager
 - mySQL Database 
 - Eloquent, Database ORM
@@ -65,7 +65,7 @@ See `Makefile` for a list of commands available in the application.
 
 2. Run the mySQL client - `$ mysql -u root -p`
     - `root` - user
-    - `p` - you will be prompted to enter a password. Please press enter, with a blank password.
+    - `p` - you will be prompted to enter your mysql root user password. Please enter when you have input your password.
 
 3. Create a local database the application can integrate with: `CREATE DATABASE quiz_manager;` 
     - Run the query `SHOW DATABASES;`, to confirm your database has been created.
