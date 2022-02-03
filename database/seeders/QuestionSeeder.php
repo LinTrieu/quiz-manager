@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use App\Models\Question;
 use Illuminate\Database\Seeder;
 
