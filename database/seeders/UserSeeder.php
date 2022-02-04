@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Database\Factories\UserFactory;
 
 class UserSeeder extends Seeder
 {
@@ -21,8 +22,12 @@ class UserSeeder extends Seeder
             echo "Skipping User; data already exists\n";
             return;
         }
+        
+        // laravel 8 upgrade
+        User::factory()->count(self::NUMBER_OF_USERS)->create();
 
-        factory(User::class, self::NUMBER_OF_USERS)->create();
+        // laravel 7 deprecated
+        // factory(User::class, self::NUMBER_OF_USERS)->create();
 
         // pre-configured user data for manual testing purposes
         $restricted = new User();

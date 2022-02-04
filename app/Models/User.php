@@ -3,8 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Notifications\Notifiable;
 use App\Models\UserPermission;
+
 
 /**
  * Class User
@@ -18,6 +20,7 @@ use App\Models\UserPermission;
  */
 class User extends Authenticatable
 {
+    use HasFactory;
     use Notifiable;
 
     protected $table = 'user';
