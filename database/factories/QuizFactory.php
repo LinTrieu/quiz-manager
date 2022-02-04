@@ -19,6 +19,6 @@ use Illuminate\Database\Eloquent\Factory;
 
 $factory->define(Quiz::class, function (Faker $faker) {
     return [
-        'title' => $faker->word . ' ' . $faker->word . ' ' . $faker->word,
+        'title' => $this->faker->word . ' ' . $this->faker->word . ' ' . $this->faker->word,
     ];
 });
