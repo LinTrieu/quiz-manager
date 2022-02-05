@@ -21,6 +21,10 @@ class QuizSeeder extends Seeder
             return;
         }
 
-        factory(Quiz::class, self::NUMBER_OF_QUIZZES)->create();
+        // laravel 8 upgrade
+        Quiz::factory()->count(self::NUMBER_OF_QUIZZES)->create();
+        
+        // laravel 7 deprecated
+        // factory(Quiz::class, self::NUMBER_OF_QUIZZES)->create();
     }
 }

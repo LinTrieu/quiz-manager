@@ -21,6 +21,7 @@ class QuestionSeeder extends Seeder
             return;
         }
 
-        factory(Question::class, self::NUMBER_OF_QUESTIONS)->create();
+        Question::factory()->count(self::NUMBER_OF_QUESTIONS)->create();
+        // factory(Question::class, self::NUMBER_OF_QUESTIONS)->create();
     }
 }
