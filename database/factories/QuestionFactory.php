@@ -16,7 +16,8 @@ class QuestionFactory extends Factory
     {
         return [
             'description' => $this->faker->sentence . '?',
-            'quiz_id' => Quiz::all()->random()->id,
+            // hardcoded max for now. TODO: add faker generated random number between zero and the seeded number of quizzes
+            'quiz_id' => rand(1,10),
             'answer_key' => $this->faker->randomElement(['A','B','C','D','E']),
             'option_a' => $this->faker->word,
             'option_b' => $this->faker->word,
