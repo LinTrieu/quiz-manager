@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
-use Database\Factories\UserFactory;
+use App\Database\Factories\UserFactory;
 
 class UserSeeder extends Seeder
 {
