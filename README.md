@@ -35,7 +35,7 @@ Password for all user accounts: `password`
 
 ### How to set up & run application for local development
 
- For additional guidance, refer to file [2.2. Quiz Manager Setup Instructions](https://github.com/LinTrieu/Linna-Trieu-SP/blob/master/documentation/2_construction/2.2.setup_instructions_to_run_application.pdf)
+ For full guidance, refer to file [2.2. Quiz Manager Setup Instructions](https://github.com/LinTrieu/Linna-Trieu-SP/blob/master/documentation/2_construction/2.2.setup_instructions_to_run_application.pdf)
  
 1. Git clone the GitHub repository
 
@@ -53,7 +53,8 @@ Password for all user accounts: `password`
 
 5. Set up a local mySQL database named `quiz-manager` (details below) 
 
-6. Run the command `make migrate-seed` to run database migrations and seeders,
+6. Run the command `make migrate-seed` to run database migrations and seeders
+
 7. Run `make start` to start the server. View application on your localhost.
 
 See `Makefile` for a list of commands available in the application. 
