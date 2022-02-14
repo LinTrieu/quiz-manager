@@ -40,7 +40,7 @@ html, body {
 
 .title {
     color: #636b6f;
-    font-size: 90px;
+    font-size: 100px;
     align-content: center;
 }
 
@@ -57,7 +57,3 @@ html, body {
 .m-b-md {
     margin-bottom: 30px;
 }
-
-/* .delete-btn {
-    color: #fff;
-} */
