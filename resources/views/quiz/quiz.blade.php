@@ -80,13 +80,13 @@
                         @method('DELETE')
                         @csrf
                     </form>
-                    <a class="btn btn-sm btn-primary mx-2" onclick="if (confirm('Are you sure you want to delete this Quiz: {{ $quiz->title  }}?')) {
+                    <btn class="btn btn-sm btn-primary mx-2 delete-btn" onclick="if (confirm('Are you sure you want to delete this Quiz: {{ $quiz->title  }}?')) {
                             event.preventDefault();
                             document.getElementById('delete-quiz').submit();
                             }else{
                             event.preventDefault();
                             }">Delete Quiz
-                    </a>
+                    </btn>
                     @endif
                 </div>
             </div>
