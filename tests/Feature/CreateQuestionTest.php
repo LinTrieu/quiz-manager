@@ -13,7 +13,7 @@ class CreateQuestionTest extends TestCase
     public function testEditUserCanViewNewQuestionForm(): void
     {
         $this->loginWithEditUser();
-        $quiz = factory(Quiz::class)->create();
+        $quiz = Quiz::factory()->create();
         $response = $this->get('/question/create/' . $quiz->id);
 
         $response->assertSuccessful();
@@ -23,7 +23,7 @@ class CreateQuestionTest extends TestCase
     public function testViewUserCannotViewNewQuestionForm(): void
     {
         $this->loginWithViewUser();
-        $quiz = factory(Quiz::class)->create();
+        $quiz = Quiz::factory()->create();
         $response = $this->get('/question/create/' . $quiz->id);
 
         $response->assertStatus(302);
@@ -33,7 +33,7 @@ class CreateQuestionTest extends TestCase
     public function testEditUserCanCreateANewQuestion(): void
     {
         $this->loginWithEditUser();
-        $quiz = factory(Quiz::class)->create();
+        $quiz = Quiz::factory()->create();
 
         $response = $this->post('/question', [
             'quiz_id' => $quiz->id,
