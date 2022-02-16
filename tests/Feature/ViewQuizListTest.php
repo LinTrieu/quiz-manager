@@ -31,7 +31,7 @@ class ViewQuizListTest extends TestCase
     {
         $this->loginWithEditUser();
 
-        $quiz = factory(Quiz::class)->create([
+        $quiz = Quiz::factory()->create([
             'id' => $quiz_id = 1,
             'title' => 'Maths Quiz',
         ]);
@@ -48,7 +48,7 @@ class ViewQuizListTest extends TestCase
     {
         $this->loginWithViewUser();
 
-        $quiz = factory(Quiz::class)->create([
+        $quiz = Quiz::factory()->create([
             'id' => $quiz_id = 1,
             'title' => 'English Quiz',
         ]);
