@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\User;
+use App\Models\User;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use Illuminate\Support\Facades\Hash;
 use \App\Models\UserPermission;
@@ -13,7 +13,7 @@ abstract class TestCase extends BaseTestCase
 
     public function loginWithFakeUser(): void
     {
-        $user = factory(User::class)->make([
+        $user = User::factory()->create([
             'id' => 1,
             'first_name' => 'David',
             'last_name' => 'Smith',
@@ -26,7 +26,7 @@ abstract class TestCase extends BaseTestCase
 
     public function loginWithRestrictedUser(): void
     {
-        $user = factory(User::class)->create([
+        $user = User::factory()->create([
             'id' => 1,
             'first_name' => 'Restricted',
             'last_name' => 'User',
@@ -40,7 +40,7 @@ abstract class TestCase extends BaseTestCase
 
     public function loginWithViewUser(): void
     {
-        $user = factory(User::class)->create([
+        $user = User::factory()->create([
             'id' => 1,
             'first_name' => 'View',
             'last_name' => 'User',
@@ -53,8 +53,8 @@ abstract class TestCase extends BaseTestCase
     }
 
     public function loginWithEditUser(): void
-    {
-        $user = factory(User::class)->create([
+    {    
+        $user = User::factory()->create([
             'id' => 1,
             'first_name' => 'Edit',
             'last_name' => 'User',
