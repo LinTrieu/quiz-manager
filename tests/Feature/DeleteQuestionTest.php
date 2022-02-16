@@ -15,9 +15,9 @@ class DeleteQuestionTest extends TestCase
     {
         $this->loginWithEditUser();
 
-        $quiz = factory(Quiz::class)->create();
-
-        $question = factory(Question::class)->create([
+        $quiz = Quiz::factory()->create();
+        
+        $question = Question::factory()->create([
             'quiz_id' => $quiz->id,
             'id' => 1,
         ]);
@@ -34,9 +34,9 @@ class DeleteQuestionTest extends TestCase
     {
         $this->loginWithRestrictedUser();
 
-        $quiz = factory(Quiz::class)->create();
+        $quiz = Quiz::factory()->create();
 
-        $question = factory(Question::class)->create([
+        $question = Question::factory()->create([
             'quiz_id' => $quiz->id,
             'id' => 1,
         ]);
@@ -53,9 +53,9 @@ class DeleteQuestionTest extends TestCase
     {
         $this->loginWithViewUser();
 
-        $quiz = factory(Quiz::class)->create();
+        $quiz = Quiz::factory()->create();
 
-        $question = factory(Question::class)->create([
+        $question = Question::factory()->create([
             'quiz_id' => $quiz->id,
             'id' => 1,
         ]);
