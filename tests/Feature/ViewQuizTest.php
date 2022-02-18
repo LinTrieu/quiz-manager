@@ -14,8 +14,8 @@ class ViewQuizTest extends TestCase
     public function testUserCanViewAQuiz(): void
     {
         $this->loginWithFakeUser();
-
-        factory(Quiz::class)->create([
+        
+        Quiz::factory()->create([
             'id' => 1,
         ]);
 
@@ -27,7 +27,7 @@ class ViewQuizTest extends TestCase
 
     public function testUserCannotViewQuizWhenGuest(): void
     {
-        factory(Quiz::class)->create([
+        Quiz::factory()->create([
             'id' => 1,
         ]);
 
@@ -40,20 +40,20 @@ class ViewQuizTest extends TestCase
     public function testUserOnlySeesQuestionsBelongingToAQuiz(): void
     {
         $this->loginWithFakeUser();
-        $quizOne = factory(Quiz::class)->create([
+        $quizOne = Quiz::factory()->create([
             'id' => 1,
             'title' => 'Geography Quiz',
         ]);
 
-        $quizTwo = factory(Quiz::class)->create([
+        $quizTwo = Quiz::factory()->create([
             'id' => 2,
             'title' => 'Maths Quiz',
         ]);
 
-        $questionQuizOne = factory(Question::class)->create([
+        $questionQuizOne = Question::factory()->create([
             'quiz_id' => 1,
         ]);
-        $questionQuizTwo = factory(Question::class)->create([
+        $questionQuizTwo =  Question::factory()->create([
             'quiz_id' => 2,
         ]);
 
@@ -68,8 +68,8 @@ class ViewQuizTest extends TestCase
     public function testRestrictedUserCannotViewAnswers(): void
     {
         $this->loginWithRestrictedUser();
-        factory(Quiz::class)->create();
-        factory(Question::class, 10)->create([
+        Quiz::factory()->create();
+        Question::factory()->create([
             'quiz_id' => 1,
         ]);
 
@@ -82,8 +82,8 @@ class ViewQuizTest extends TestCase
     public function testViewUserCanViewAnswers(): void
     {
         $this->loginWithViewUser();
-        $questions = factory(Quiz::class)->create();
-        factory(Question::class, 10)->create([
+        $questions = Quiz::factory()->create();
+        Question::factory()->create([
             'quiz_id' => 1,
         ]);
 
@@ -94,8 +94,8 @@ class ViewQuizTest extends TestCase
     public function testEditUserCanViewAnswers(): void
     {
         $this->loginWithEditUser();
-        factory(Quiz::class)->create();
-        factory(Question::class, 10)->create([
+        Quiz::factory()->create();
+        Question::factory()->create([
             'quiz_id' => 1,
         ]);
 
@@ -107,8 +107,8 @@ class ViewQuizTest extends TestCase
     public function testRestrictedUserCannotSelectRevealAnswers(): void
     {
         $this->loginWithRestrictedUser();
-        factory(Quiz::class)->create();
-        factory(Question::class, 10)->create([
+        Quiz::factory()->create();
+        Question::factory()->create([
             'quiz_id' => 1,
         ]);
 
@@ -121,8 +121,8 @@ class ViewQuizTest extends TestCase
     public function testEditUserCanSelectRevealAnswers(): void
     {
         $this->loginWithEditUser();
-        factory(Quiz::class)->create();
-        factory(Question::class, 10)->create([
+        Quiz::factory()->create();
+        Question::factory()->create([
             'quiz_id' => 1,
         ]);
 
