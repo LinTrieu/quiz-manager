@@ -22,7 +22,7 @@ class LoginTest extends TestCase
 
     public function testUserCannotViewALoginFormWhenAuthenticated(): void
     {
-        $user = factory(User::class)->make();
+        $user = User::factory()->make();
 
         $response = $this->actingAs($user)->get('/login');
 
@@ -31,7 +31,7 @@ class LoginTest extends TestCase
 
     public function testUserCanLoginWithCorrectCredentials(): void
     {
-        $user = factory(User::class)->create([
+        $user = User::factory()->create([
             'password' => Hash::make($password = 'password')
         ]);
 
@@ -46,7 +46,7 @@ class LoginTest extends TestCase
 
     public function testUserCannotLoginWithIncorrectPassword(): void
     {
-        $user = factory(User::class)->create([
+        $user = User::factory()->create([
             'password' => Hash::make('correct-password')
         ]);
 
@@ -64,7 +64,7 @@ class LoginTest extends TestCase
 
     public function testRememberMeFunctionality(): void
     {
-        $user = factory(User::class)->create([
+        $user = User::factory()->create([
             'id' => random_int(1, 100),
             'password' => Hash::make($password = 'password'),
         ]);
@@ -87,7 +87,9 @@ class LoginTest extends TestCase
 
     public function testUserCanLogout(): void
     {
-        $this->be(factory(User::class)->create());
+        $user = User::factory()->create();
+
+        $this->be($user);
 
         $response = $this->post('/logout');
 
