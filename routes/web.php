@@ -19,9 +19,9 @@ Route::get('/', function () {
 });
 
 Auth::routes([
-    'register' => false, // Registration Routes
-    'reset' => false, // Password Reset Routes
-    'verify' => false, // Email Verification Routes
+    'register' => true, // Registration Routes
+    'reset' => true, // Password Reset Routes
+    'verify' => true, // Email Verification Routes
 ]);
 
 // Show Quiz List
