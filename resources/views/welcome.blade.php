@@ -11,6 +11,7 @@
             <div class="links">
                 @guest
                 <a href="{{ route('login') }}"> Login </a>
+                <a href="{{ route('register') }}"> Register </a>
                 @endguest
                 @auth
                 <a href="{{ url('quiz') }}"> View Quizzes </a>
