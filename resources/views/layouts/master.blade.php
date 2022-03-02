@@ -59,15 +59,15 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
-                        {{--                            @if (Route::has('register'))--}}
-                        {{--                                <li class="nav-item">--}}
-                        {{--                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>--}}
-                        {{--                                </li>--}}
-                        {{--                            @endif--}}
+                        @if (Route::has('register'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            </li>
+                        @endif
                         @else
-                        {{--                            <li class="nav-item">--}}
-                        {{--                                {{ Auth::user()->first_name }}--}}
-                        {{--                            </li>--}}
+                            <li class="nav-item">
+                                {{ Auth::user()->first_name }}
+                            </li>
 
                         <li class="nav-item px-3">
                             <a class="nav-link" href="{{ route('quiz.index') }}"> {{ __('Quizzes') }} </a>
