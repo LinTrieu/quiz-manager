@@ -2,8 +2,8 @@
 
 ### Technology Stack
 
-- PHP v8.1.2 (prev. 7.3.11)
-- Laravel Framework v8.80.0 (prev. v7.15.0)
+- PHP v8.1.2
+- Laravel Framework v8.x 
 - Composer, Dependency Manager
 - mySQL Database 
 - Eloquent, Database ORM
