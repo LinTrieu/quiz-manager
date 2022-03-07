@@ -66,7 +66,7 @@
                         @endif
                         @else
                             <li class="nav-item">
-                                {{ Auth::user()->first_name }}
+                                <a class="nav-link"> {{ Auth::user()->first_name }} </a>
                             </li>
 
                         <li class="nav-item px-3">
