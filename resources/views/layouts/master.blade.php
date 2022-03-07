@@ -65,13 +65,16 @@
                             </li>
                         @endif
                         @else
-                            <li class="nav-item">
-                                <a class="nav-link"> {{ Auth::user()->first_name }} </a>
-                            </li>
-
                         <li class="nav-item px-3">
                             <a class="nav-link" href="{{ route('quiz.index') }}"> {{ __('Quizzes') }} </a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                                {{ Auth::user()->first_name }} 
+                            </a>
+                        </li>
+
 
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('logout') }}"
