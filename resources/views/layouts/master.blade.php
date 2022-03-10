@@ -74,7 +74,7 @@
                                 {{ Auth::user()->first_name }} 
                             </a>
 
-                            <div class="nav-item dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div class="nav-item dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="nav-link dropdown-item" href="#">Action</a>
                                 <a class="nav-link dropdown-item" href="#">Another action</a>
                                 <div class="nav-item dropdown-divider"></div>
@@ -86,7 +86,7 @@
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
-                              </div>
+                            </div>
                         </li>
                         @endguest
                     </ul>
