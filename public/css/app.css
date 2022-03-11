@@ -57,3 +57,7 @@ html, body {
 .m-b-md {
     margin-bottom: 30px;
 }
+
+#dropdown-menu-item {
+    color: #636b6f;
+}

@@ -74,11 +74,12 @@
                                 {{ Auth::user()->first_name }} 
                             </a>
 
-                            <div class="nav-item dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="nav-link dropdown-item" href="#">Action</a>
-                                <a class="nav-link dropdown-item" href="#">Another action</a>
+                            <div class="nav-item dropdown-menu dropdown-menu-right"aria-labelledby="navbarDropdown">
+                                <a class="nav-link dropdown-item" id="dropdown-menu-item" href="#">Action</a>
+                                <a class="nav-link dropdown-item" id="dropdown-menu-item" href="#">Another action</a>
                                 <div class="nav-item dropdown-divider"></div>
-                                <a class="nav-link dropdown-item" href="{{ route('logout') }}" 
+
+                                <a class="nav-link dropdown-item" id="dropdown-menu-item" href="{{ route('logout') }}" 
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
