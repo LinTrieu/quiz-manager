@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Faker\Generator as Faker;
+use Illuminate\Support\Facades\DB;
 
 class QuestionFactory extends Factory
 {
@@ -14,10 +15,11 @@ class QuestionFactory extends Factory
      */
     public function definition()
     {
+        $quizIDS = DB::table('quiz')->pluck('id');
+     
         return [
             'description' => $this->faker->sentence . '?',
-            // hardcoded max for now. TODO: add faker generated random number between zero and the seeded number of quizzes
-            'quiz_id' => rand(1,10),
+            'quiz_id' => $this->faker->randomElement($quizIDS),
             'answer_key' => $this->faker->randomElement(['A','B','C','D','E']),
             'option_a' => $this->faker->word,
             'option_b' => $this->faker->word,
