@@ -5,6 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Faker\Generator as Faker;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class QuestionFactory extends Factory
 {
@@ -16,6 +17,7 @@ class QuestionFactory extends Factory
     public function definition()
     {
         $quizIDS = DB::table('quiz')->pluck('id');
+        Log::debug($quizIDS);
      
         return [
             'description' => $this->faker->sentence . '?',
