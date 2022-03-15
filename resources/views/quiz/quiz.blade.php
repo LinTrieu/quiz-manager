@@ -51,11 +51,11 @@
                                     <li> {{ $question['option_d'] }} </li>
                                     <li> {{ $question['option_e'] }} </li>
                                     <br>
-                                    <p class="answer-key">
-                                        Answer: {{ $question['answer_key'] }}
-                                    </p>
                                 </div>
                             </ol>
+                            <p class="answer-key">
+                                Answer: {{ $question['answer_key'] }}
+                            </p>
                             @endif
                         </div>
                         @endforeach
