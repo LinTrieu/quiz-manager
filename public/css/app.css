@@ -61,3 +61,8 @@ html, body {
 #dropdown-menu-item {
     color: #636b6f;
 }
+
+.answer-key {
+    text-decoration: underline;
+    font-weight: bold;
+}
