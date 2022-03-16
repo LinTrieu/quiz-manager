@@ -17,7 +17,6 @@ class QuestionFactory extends Factory
     public function definition()
     {
         $quizIDS = DB::table('quiz')->pluck('id');
-        Log::debug($quizIDS);
      
         return [
             'description' => $this->faker->sentence . '?',
