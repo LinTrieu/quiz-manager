@@ -30,7 +30,7 @@ class Quiz extends Model
 
     public function question(): HasMany
     {
-        // Again, a quiz id is referenced in the questions' table as 'quid id' so we specify it here.
+        // Quiz id is referenced in the Questions' table as 'quid_id' so we specify it here.
         return $this->hasMany('App\Models\Question::class', 'quiz_id');
     }
 }

@@ -13,7 +13,7 @@
                         multiple-choice options.
                     </p>
 
-                    <form action="{{ route('question.store',['quiz_id' => $quiz_id]) }}" method="POST">
+                    <form action="{{ route('question.store') }}" method="POST">
                         @csrf
                         @method('POST')
 

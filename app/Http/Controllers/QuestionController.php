@@ -48,7 +48,7 @@ class QuestionController extends Controller
     {
         $permissionLevel = Auth::user()->permission_level;
         if ($permissionLevel == UserPermission::PERMISSION_EDIT) {
-            return view('question.new_question', array('quiz_id' => $quiz->id));
+            return view('question.new_question');
         }
         return redirect('/quiz/' . $quiz->id);
     }
