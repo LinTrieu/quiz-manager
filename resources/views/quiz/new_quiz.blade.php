@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Create a New Quiz') }}</div>
                 <div class="card-body">
                     <p class="card-text mx-1 mb-4">
-                        Create a new quiz by naming your quiz and inputting its question and answers in the form below and selecting 'Submit Quiz'. There are a >minimum of three multiple-choice options per question.
+                        Create a new quiz by adding a quiz name in the form below, as well as at at least one question.
                     </p>
                     <form method="POST" action="{{ route('quiz.store') }}">
                         @csrf
@@ -30,6 +30,7 @@
                             </div>
                         </div>
 {{-- start of question form --}}
+Question(s)
                         <div class="card-body">
                             <form action="{{ route('question.store') }}" method="POST">
                                 @csrf
