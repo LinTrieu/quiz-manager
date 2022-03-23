@@ -38,7 +38,7 @@ Question(s)
 
                                 <div class="form-group row">
                                     <label for="question_description"
-                                        class="col-md-4 col-form-label text-md-right">{{ __('Question description') }} </label>
+                                        class="col-md-4 col-form-label text-md-right">{{ __('Question Description') }} </label>
 
                                     <div class="col-md-6">
                                         <input id="question_description" type="text"
@@ -91,7 +91,6 @@ Question(s)
                                         @enderror
                                     </div>
                                 </div>
-
 
                                 <div class="form-group row">
                                     <label for="option_c" class="col-md-4 col-form-label text-md-right">{{ __('Option C') }}
@@ -166,26 +165,24 @@ Question(s)
                                     </div>
                                 </div>
 
-                                <div class="form-group row mb-0 mt-4">
+                                {{-- <div class="form-group row mb-0 mt-4">
                                     <div class="col-md-6 offset-md-4">
                                         <button type="submit" class="btn btn-primary">
                                             {{ __('Submit Question') }}
                                         </button>
                                     </div>
-                                </div>
+                                </div> --}}
                             </form>
                         </div> 
 {{--  end of question form --}}
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Create new Quiz') }}
+                                    {{ __('Create Quiz') }}
                                 </button>
                             </div>
                         </div>
                     </form>
-
-
                 </div>
             </div>
         </div>
