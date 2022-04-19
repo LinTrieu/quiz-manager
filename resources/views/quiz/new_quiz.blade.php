@@ -29,8 +29,8 @@
                                 @enderror
                             </div>
                         </div>
-{{-- start of question form --}}
-Question(s)
+                        {{-- start of question form --}}
+                        Add a Question:
                         <div class="card-body">
                             <form action="{{ route('question.store') }}" method="POST">
                                 @csrf
@@ -45,8 +45,7 @@ Question(s)
                                             class="form-control @error('question_description') is-invalid @enderror"
                                             name="question_description" value="{{ old('question_description') }}" required
                                             autocomplete="question_description" autofocus>
-                                        <small id="emailHelp" class="form-text text-muted">E.g 'What is the capital of the
-                                            UK?'</small>
+                                        <small id="emailHelp" class="form-text text-muted">E.g 'What is the capital city of England?'</small>
 
                                         @error('question_description')
                                         <span class="invalid-feedback" role="alert">
@@ -64,7 +63,7 @@ Question(s)
                                         <input id="option_a" type="text"
                                             class="form-control @error('option_a') is-invalid @enderror" name="option_a"
                                             value="{{ old('option_a') }}" required autocomplete="option_a">
-                                        <small id="emailHelp" class="form-text text-muted">'Manchester'</small>
+                                        <small id="emailHelp" class="form-text text-muted">Manchester</small>
 
                                         @error('option_a')
                                         <span class="invalid-feedback" role="alert">
@@ -82,7 +81,7 @@ Question(s)
                                         <input id="option_b" type="text"
                                             class="form-control @error('option_b') is-invalid @enderror" name="option_b"
                                             value="{{ old('option_b') }}" required autocomplete="option_b">
-                                        <small id="emailHelp" class="form-text text-muted">'London'</small>
+                                        <small id="emailHelp" class="form-text text-muted">London</small>
 
                                         @error('option_b')
                                         <span class="invalid-feedback" role="alert">
@@ -100,7 +99,7 @@ Question(s)
                                         <input id="option_c" type="text"
                                             class="form-control @error('option_c') is-invalid @enderror" name="option_c"
                                             value="{{ old('option_c') }}" required autocomplete="option_c">
-                                        <small id="emailHelp" class="form-text text-muted">'Glasgow'</small>
+                                        <small id="emailHelp" class="form-text text-muted">Glasgow</small>
 
                                         @error('option_c')
                                         <span class="invalid-feedback" role="alert">
