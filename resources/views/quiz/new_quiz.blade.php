@@ -29,6 +29,14 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Create Quiz') }}
+                                </button>
+                            </div>
+                        </div>
+
                         {{-- start of question form --}}
                         Add a Question:
                         <div class="card-body">
@@ -154,8 +162,8 @@
                                             class="form-control @error('answer_key') is-invalid @enderror" name="answer_key"
                                             value="{{ old('answer_key') }}" autocomplete="answer_key" pattern="[A-E]{1}"
                                             required>
-                                        <small id="emailHelp" class="form-text text-muted">Input the correct answer key: 'A',
-                                            'B', 'C', 'D' or 'E'</small>
+                                        <small id="emailHelp" class="form-text text-muted">Input the answer key: A,
+                                            B, C, D, E</small>
                                         @error('answer_key')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -173,14 +181,7 @@
                                 </div> --}}
                             </form>
                         </div> 
-{{--  end of question form --}}
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Create Quiz') }}
-                                </button>
-                            </div>
-                        </div>
+                        {{--  end of question form --}}
                     </form>
                 </div>
             </div>
