@@ -172,13 +172,13 @@
                                     </div>
                                 </div>
 
-                                {{-- <div class="form-group row mb-0 mt-4">
+                                <div class="form-group row mb-0 mt-4">
                                     <div class="col-md-6 offset-md-4">
                                         <button type="submit" class="btn btn-primary">
-                                            {{ __('Submit Question') }}
+                                            {{ __('Add Question') }}
                                         </button>
                                     </div>
-                                </div> --}}
+                                </div>
                             </form>
                         </div> 
                         {{--  end of question form --}}
